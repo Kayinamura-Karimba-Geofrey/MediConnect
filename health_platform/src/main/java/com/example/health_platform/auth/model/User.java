@@ -16,6 +16,8 @@ public class User {
     @Column(nullable = false)
     private String fullName;
 
+    private String username;
+
     @Column(nullable = false)
     private String password;
 
@@ -23,6 +25,9 @@ public class User {
 
     @Column(nullable = false, unique = true)
     private String email;
+
+    @Column (nullable = false )
+    private String address;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
@@ -33,5 +38,20 @@ public class User {
     private boolean verified=false;
 
     private String refreshToken;
-    
+
+   
+
+    @Column(name = "profile_photo")
+@Lob
+private byte[] profilePhoto;
+
+
+public byte[] getProfilePhoto() {
+    return profilePhoto;
+}
+
+public void setProfilePhoto(byte[] profilePhoto) {
+    this.profilePhoto = profilePhoto;
+}
+
 }
