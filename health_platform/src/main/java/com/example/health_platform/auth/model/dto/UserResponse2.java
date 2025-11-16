@@ -8,7 +8,13 @@ public class UserResponse2 {
     private Long id;
     private String fullName;
     private String email;
-    private Role role;
+    private String role;
     private String phone;
+
+    // Custom setter to accept Role enum
+    public void setRole(Role role) {
+        this.role = role != null ? role.name() : null;
+    }
 }
+
 

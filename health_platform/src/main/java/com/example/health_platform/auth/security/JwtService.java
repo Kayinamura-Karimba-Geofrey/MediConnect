@@ -1,78 +1,99 @@
 package com.example.health_platform.auth.security;
 
+import com.example.health_platform.auth.model.Role;
 import org.springframework.stereotype.Service;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.security.Keys;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.JwtException;
+
+import java.security.Key;
 import java.util.Date;
 
 @Service
 public class JwtService {
 
-    private final String ACCESS_SECRET = "ACCESS_SECRET_KEY_123";
-    private final String REFRESH_SECRET = "REFRESH_SECRET_KEY_456";
+    // Secret keys (in production, store securely, e.g., environment variables)
+    private final String ACCESS_SECRET_STRING = "ACCESS_SECRET_KEY_123456789012345678901234"; // 32+ chars for HS256
+    private final String REFRESH_SECRET_STRING = "REFRESH_SECRET_KEY_4567890123456789012345";
 
-    // Generate Access Token (15 minutes)
-    public String generateAccessToken(String userId, String role) {
+    private final Key ACCESS_SECRET = Keys.hmacShaKeyFor(ACCESS_SECRET_STRING.getBytes());
+    private final Key REFRESH_SECRET = Keys.hmacShaKeyFor(REFRESH_SECRET_STRING.getBytes());
+
+    // ------------------- Generate Tokens -------------------
+
+    // Access Token (15 min)
+    public String generateAccessToken(String userId, Role role) {
         return Jwts.builder()
                 .setSubject(userId)
-                .claim("role", role)
-                .setExpiration(new Date(System.currentTimeMillis() + 15 * 60 * 1000))
-                .signWith(SignatureAlgorithm.HS256, ACCESS_SECRET)
+                .claim("role", role.name())
+                .setExpiration(new Date(System.currentTimeMillis() + 15 * 60 * 1000)) // 15 mins
+                .signWith(ACCESS_SECRET, SignatureAlgorithm.HS256)
                 .compact();
     }
 
-    // Generate Refresh Token (30 days)
+    // Refresh Token (30 days)
     public String generateRefreshToken(String userId) {
         return Jwts.builder()
                 .setSubject(userId)
-                .setExpiration(new Date(System.currentTimeMillis() + 30L * 24 * 60 * 60 * 1000))
-                .signWith(SignatureAlgorithm.HS256, REFRESH_SECRET)
+                .setExpiration(new Date(System.currentTimeMillis() + 30L * 24 * 60 * 60 * 1000)) // 30 days
+                .signWith(REFRESH_SECRET, SignatureAlgorithm.HS256)
                 .compact();
     }
 
-    // Validate Access Token
+    // ------------------- Validate Tokens -------------------
+
     public boolean validateAccessToken(String token) {
         try {
-            Jwts.parser()
-                    .setSigningKey(ACCESS_SECRET)
-                    .build()
-                    .parseClaimsJws(token);
+            Jwts.parserBuilder()
+                .setSigningKey(ACCESS_SECRET)
+                .build()
+                .parseClaimsJws(token);
             return true;
-        } catch (Exception e) {
+        } catch (JwtException e) {
             return false;
         }
     }
 
-    // Validate Refresh Token
     public boolean validateRefreshToken(String token) {
         try {
-            Jwts.parser()
-                    .setSigningKey(REFRESH_SECRET)
-                    .build()
-                    .parseClaimsJws(token);
+            Jwts.parserBuilder()
+                .setSigningKey(REFRESH_SECRET)
+                .build()
+                .parseClaimsJws(token);
             return true;
-        } catch (Exception e) {
+        } catch (JwtException e) {
             return false;
         }
     }
 
-    // Extract userId from Refresh Token
-    public String extractUserIdFromRefreshToken(String token) {
-        return Jwts.parser()
-                .setSigningKey(REFRESH_SECRET)
-                .build()
-                .parseClaimsJws(token)
-                .getBody()
-                .getSubject();
-    }
+    // ------------------- Extract Claims -------------------
 
-    // Extract userId from Access Token
     public String extractUserIdFromAccessToken(String token) {
-        return Jwts.parser()
+        Claims claims = Jwts.parserBuilder()
                 .setSigningKey(ACCESS_SECRET)
                 .build()
                 .parseClaimsJws(token)
-                .getBody()
-                .getSubject();
+                .getBody();
+        return claims.getSubject();
+    }
+
+    public String extractUserIdFromRefreshToken(String token) {
+        Claims claims = Jwts.parserBuilder()
+                .setSigningKey(REFRESH_SECRET)
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+        return claims.getSubject();
+    }
+
+    public String extractRoleFromAccessToken(String token) {
+        Claims claims = Jwts.parserBuilder()
+                .setSigningKey(ACCESS_SECRET)
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+        return claims.get("role", String.class);
     }
 }

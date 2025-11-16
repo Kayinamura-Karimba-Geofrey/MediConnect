@@ -12,7 +12,7 @@ import com.example.health_platform.auth.model.dto.RegisterRequest;
 import com.example.health_platform.auth.model.dto.UserResponse2;
 import com.example.health_platform.auth.model.dto.VerifyRequest;
 import com.example.health_platform.auth.repository.UserRepository;
-import com.example.health_platform.auth.security.JwtUtils;
+import com.example.health_platform.auth.security.JwtService;
 
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -22,7 +22,7 @@ public class AuthServiceImpl implements AuthService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
-    private final JwtUtils jwtUtils;
+    private final JwtService jwtService;
 
     @Override
     public User register(RegisterRequest request) {
@@ -36,14 +36,17 @@ public class AuthServiceImpl implements AuthService {
         newUser.setEmail(request.getEmail());
         newUser.setPassword(passwordEncoder.encode(request.getPassword()));
         newUser.setPhone(request.getPhone());
+
+        // Ensure Role is type-safe
         if (request.getRole() != null && !request.getRole().isEmpty()) {
             newUser.setRole(Role.valueOf(request.getRole().toUpperCase()));
         } else {
-            newUser.setRole(Role.PATIENTS); // default role
+            newUser.setRole(Role.PATIENTS);
         }
 
         return userRepository.save(newUser);
     }
+
     @Override
     public String login(LoginRequest request) {
         User user = userRepository.findByEmail(request.getEmail())
@@ -53,7 +56,8 @@ public class AuthServiceImpl implements AuthService {
             throw new RuntimeException("Invalid email or password");
         }
 
-        return jwtUtils.generateToken(user.getEmail());
+        // Generate access token with user ID and Role
+        return jwtService.generateAccessToken(user.getId().toString(), user.getRole());
     }
 
     @Override
@@ -77,20 +81,17 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public JwtResponse refreshToken(RefreshTokenRequest request) {
         String refreshToken = request.getRefreshToken();
-        
-        // For now, we'll validate the refresh token by extracting email from it
-        // In a production system, you'd want a separate refresh token validation
         try {
-            String email = jwtUtils.getEmailFromJwt(refreshToken);
-            User user = userRepository.findByEmail(email)
+            String userId = jwtService.extractUserIdFromRefreshToken(refreshToken);
+            User user = userRepository.findById(Long.parseLong(userId))
                     .orElseThrow(() -> new RuntimeException("User not found"));
 
             if (user.getRefreshToken() == null || !user.getRefreshToken().equals(refreshToken)) {
                 throw new RuntimeException("Refresh token does not match");
             }
 
-            // Generate new access token
-            String newAccessToken = jwtUtils.generateToken(user.getEmail());
+            // Generate new access token (type-safe Role)
+            String newAccessToken = jwtService.generateAccessToken(user.getId().toString(), user.getRole());
             return new JwtResponse(newAccessToken);
         } catch (Exception e) {
             throw new RuntimeException("Invalid refresh token", e);
@@ -105,15 +106,14 @@ public class AuthServiceImpl implements AuthService {
             throw new RuntimeException("Unauthorized");
         }
 
+        // Type-safe Role assignment
         UserResponse2 response = new UserResponse2();
         response.setId(user.getId());
         response.setFullName(user.getFullName());
         response.setEmail(user.getEmail());
-        response.setRole(user.getRole());
+        response.setRole(user.getRole()); // Ensure UserResponse2.role is Role, not String
         response.setPhone(user.getPhone());
 
         return response;
     }
 }
-
-

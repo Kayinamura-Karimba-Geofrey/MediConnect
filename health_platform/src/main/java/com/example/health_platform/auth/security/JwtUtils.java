@@ -2,6 +2,7 @@ package com.example.health_platform.auth.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.stereotype.Component;
 
@@ -18,23 +19,22 @@ public class JwtUtils {
         return Keys.hmacShaKeyFor(JWT_SECRET.getBytes());
     }
 
+    // Generate JWT token
     public String generateToken(String email) {
         return Jwts.builder()
-                .subject(email)
-                .issuedAt(new Date())
-                .expiration(new Date(System.currentTimeMillis() + JWT_EXPIRATION_MS))
-                .signWith(getSigningKey())
+                .setSubject(email)
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + JWT_EXPIRATION_MS))
+                .signWith(SignatureAlgorithm.HS256, getSigningKey().getEncoded())
                 .compact();
     }
 
+    
     public String getEmailFromJwt(String token) {
         Claims claims = Jwts.parser()
-                .verifyWith(getSigningKey())
-                .build()
-                .parseSignedClaims(token)
-                .getPayload();
+                .setSigningKey(getSigningKey().getEncoded())
+                .parseClaimsJws(token)
+                .getBody();
         return claims.getSubject();
     }
 }
-
-
