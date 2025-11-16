@@ -1,7 +1,7 @@
 package com.example.health_platform.modules.medicalrecord.service;
 
 import com.example.health_platform.modules.medicalrecord.DTO.MedicalProfileRequest;
-import com.example.health_platform.modules.medicalrecord.entity.MedicalProfile;
+import com.example.health_platform.modules.medicalrecord.model.MedicalProfile;
 import com.example.health_platform.modules.medicalrecord.repository.MedicalProfileRepository;
 import com.example.health_platform.auth.model.User;
 import com.example.health_platform.modules.user.service.UserService;
@@ -16,10 +16,11 @@ public class MedicalProfileService {
     private final UserService userService;
 
     public MedicalProfile createOrUpdate(Long userId, MedicalProfileRequest req) {
-        // Fetch user
+
+        // Get user by ID
         User user = userService.getUserById(userId);
 
-        // Fetch or create profile
+        // Find existing profile or create new
         MedicalProfile profile = profileRepository.findByUserId(userId)
                 .orElse(new MedicalProfile());
 

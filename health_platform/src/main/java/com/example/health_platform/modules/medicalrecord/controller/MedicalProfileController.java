@@ -2,7 +2,7 @@ package com.example.health_platform.modules.medicalrecord.controller;
 
 import com.example.health_platform.auth.security.UserPrincipal;
 import com.example.health_platform.modules.medicalrecord.DTO.MedicalProfileRequest;
-import com.example.health_platform.modules.medicalrecord.entity.MedicalProfile;
+import com.example.health_platform.modules.medicalrecord.model.MedicalProfile;
 import com.example.health_platform.modules.medicalrecord.service.MedicalProfileService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

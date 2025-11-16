@@ -1,7 +1,5 @@
 package com.example.health_platform.modules.medicalrecord.DTO;
 
-
-
 import lombok.Data;
 
 @Data
