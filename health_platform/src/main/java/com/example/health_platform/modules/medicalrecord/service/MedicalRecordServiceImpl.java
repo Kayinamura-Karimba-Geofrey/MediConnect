@@ -84,4 +84,17 @@ public class MedicalRecordServiceImpl implements MedicalRecordService {
                 .orElseThrow(() -> new RuntimeException("Medical profile not found"));
         return profile;
     }
+
+    @Override
+    public MedicalRecord getMedicalRecordById(Long recordId) {
+        return medicalRecordRepository.findById(recordId)
+                .orElseThrow(() -> new RuntimeException("Medical record not found"));
+    }
+
+    @Override
+    public void deleteMedicalRecord(Long recordId) {
+        MedicalRecord record = medicalRecordRepository.findById(recordId)
+                .orElseThrow(() -> new RuntimeException("Medical record not found"));
+        medicalRecordRepository.delete(record);
+    }
 }
