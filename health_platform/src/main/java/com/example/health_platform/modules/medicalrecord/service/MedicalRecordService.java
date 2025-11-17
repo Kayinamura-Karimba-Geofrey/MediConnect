@@ -2,57 +2,16 @@ package com.example.health_platform.modules.medicalrecord.service;
 
 import com.example.health_platform.modules.medicalrecord.DTO.MedicalRecordRequest;
 import com.example.health_platform.modules.medicalrecord.DTO.MedicalRecordResponse;
-import com.example.health_platform.modules.medicalrecord.model.MedicalRecord;
-import com.example.health_platform.modules.medicalrecord.repository.MedicalRecordRepository;
 
-import com.example.health_platform.auth.model.User;
-import com.example.health_platform.auth.repository.UserRepository;
+import java.util.List;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+public interface MedicalRecordService {
 
-import java.time.LocalDateTime;
+    MedicalRecordResponse createOrUpdateRecord(MedicalRecordRequest request);
 
-@Service
-@RequiredArgsConstructor
-public class MedicalRecordService {
+    MedicalRecordResponse getRecordById(Long recordId);
 
-    private final MedicalRecordRepository medicalRecordRepository;
-    private final UserRepository userRepository;
+    List<MedicalRecordResponse> listRecordsByUser(Long userId);
 
-    public MedicalRecordResponse createRecord(Long doctorId, MedicalRecordRequest request) {
-
-        User patient = userRepository.findById(request.getPatientId())
-                .orElseThrow(() -> new RuntimeException("Patient not found"));
-
-        User doctor = userRepository.findById(doctorId)
-                .orElseThrow(() -> new RuntimeException("Doctor not found"));
-
-        MedicalRecord record = MedicalRecord.builder()
-                .patient(patient)
-                .doctor(doctor)
-                .diagnosis(request.getDiagnosis())
-                .scanUrl(request.getScanUrl())
-                .labResult(request.getLabResult())
-                .notes(request.getNotes())
-                .createdAt(LocalDateTime.now())
-                .build();
-
-        medicalRecordRepository.save(record);
-
-        return toResponse(record);
-    }
-
-    private MedicalRecordResponse toResponse(MedicalRecord record) {
-        return MedicalRecordResponse.builder()
-                .id(record.getId())
-                .patientId(record.getPatient().getId())
-                .doctorId(record.getDoctor().getId())
-                .diagnosis(record.getDiagnosis())
-                .scanUrl(record.getScanUrl())
-                .labResult(record.getLabResult())
-                .notes(record.getNotes())
-                .createdAt(record.getCreatedAt().toString())
-                .build();
-    }
+    Object getMedicalProfileByUser(Long userId);
 }
