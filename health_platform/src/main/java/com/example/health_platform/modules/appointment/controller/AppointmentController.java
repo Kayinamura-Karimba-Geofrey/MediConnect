@@ -26,37 +26,43 @@ public class AppointmentController {
         this.userRepository = userRepository;
     }
 
+    // Create appointment
     @PostMapping("/create")
     public ResponseEntity<Appointment> createAppointment(
             @RequestBody AppointmentRequestDTO dto,
             HttpServletRequest request
     ) {
-        // Get the currently authenticated user (patient)
-        User currentUser = authService.getCurrentUser(request);
-
-        // Fetch the doctor entity using doctorId from DTO
+        User patient = authService.getCurrentUser(request);
         User doctor = userRepository.findById(dto.getDoctorId())
                 .orElseThrow(() -> new RuntimeException("Doctor not found"));
-
-        // Create appointment
-        Appointment appointment = appointmentService.createAppointment(currentUser, doctor, dto);
-
+        Appointment appointment = appointmentService.createAppointment(patient, doctor, dto);
         return ResponseEntity.ok(appointment);
     }
 
-    @GetMapping("/list")
-    public ResponseEntity<List<Appointment>> listAppointments(HttpServletRequest request) {
-        User currentUser = authService.getCurrentUser(request);
-        List<Appointment> appointments = appointmentService.getAppointmentsByPatient(currentUser);
+    // List appointments for patient
+    @GetMapping("/my")
+    public ResponseEntity<List<Appointment>> getMyAppointments(HttpServletRequest request) {
+        User patient = authService.getCurrentUser(request);
+        List<Appointment> appointments = appointmentService.getAppointmentsByPatient(patient);
         return ResponseEntity.ok(appointments);
     }
 
+    // List appointments for doctor
+    @GetMapping("/doctor/my")
+    public ResponseEntity<List<Appointment>> getDoctorAppointments(HttpServletRequest request) {
+        User doctor = authService.getCurrentUser(request);
+        List<Appointment> appointments = appointmentService.getAppointmentsByDoctor(doctor);
+        return ResponseEntity.ok(appointments);
+    }
+
+    // Get appointment by ID
     @GetMapping("/{id}")
     public ResponseEntity<Appointment> getAppointment(@PathVariable Long id) {
         Appointment appointment = appointmentService.getAppointmentById(id);
         return ResponseEntity.ok(appointment);
     }
 
+    // Delete appointment
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteAppointment(@PathVariable Long id) {
         appointmentService.deleteAppointment(id);

@@ -19,10 +19,9 @@ public class AppointmentServiceImpl implements AppointmentService {
 
     @Override
     public Appointment createAppointment(User patient, User doctor, AppointmentRequestDTO dto) {
-        // Create new appointment
         Appointment appointment = new Appointment();
         appointment.setPatient(patient);
-        appointment.setDoctor(doctor);  // now works because Appointment has doctor field
+        appointment.setDoctor(doctor);
         appointment.setAppointmentDate(dto.getAppointmentDate());
         appointment.setReason(dto.getReason());
         return appointmentRepository.save(appointment);
