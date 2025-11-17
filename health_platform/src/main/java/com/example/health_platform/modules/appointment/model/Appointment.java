@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "appointments")
 public class Appointment {
 
     @Id
@@ -13,19 +12,20 @@ public class Appointment {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "patient_id", nullable = false)
+    @JoinColumn(name = "patient_id")
     private User patient;
 
     @ManyToOne
-    @JoinColumn(name = "doctor_id", nullable = false)
+    @JoinColumn(name = "doctor_id")
     private User doctor;
 
-    @Column(nullable = false)
     private LocalDateTime appointmentDate;
 
     private String reason;
 
-    // Getters & Setters
+    private String status; // NEW: "PENDING", "CANCELLED", "APPROVED"
+
+    // Getters and setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
@@ -40,4 +40,7 @@ public class Appointment {
 
     public String getReason() { return reason; }
     public void setReason(String reason) { this.reason = reason; }
+
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
 }

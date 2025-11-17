@@ -6,6 +6,7 @@ import com.example.health_platform.modules.appointment.model.Appointment;
 import com.example.health_platform.modules.appointment.repository.AppointmentRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -24,6 +25,7 @@ public class AppointmentServiceImpl implements AppointmentService {
         appointment.setDoctor(doctor);
         appointment.setAppointmentDate(dto.getAppointmentDate());
         appointment.setReason(dto.getReason());
+        appointment.setStatus("PENDING");
         return appointmentRepository.save(appointment);
     }
 
@@ -46,5 +48,33 @@ public class AppointmentServiceImpl implements AppointmentService {
     @Override
     public void deleteAppointment(Long id) {
         appointmentRepository.deleteById(id);
+    }
+
+    @Override
+    public Appointment updateAppointment(Long id, LocalDateTime newDate) {
+        Appointment appointment = getAppointmentById(id);
+        appointment.setAppointmentDate(newDate);
+        appointment.setStatus("PENDING"); // Reset status if needed
+        return appointmentRepository.save(appointment);
+    }
+
+    @Override
+    public Appointment cancelAppointment(Long id, User patient) {
+        Appointment appointment = getAppointmentById(id);
+        if (!appointment.getPatient().getId().equals(patient.getId())) {
+            throw new RuntimeException("You can only cancel your own appointments");
+        }
+        appointment.setStatus("CANCELLED");
+        return appointmentRepository.save(appointment);
+    }
+
+    @Override
+    public Appointment approveAppointment(Long id, User doctor) {
+        Appointment appointment = getAppointmentById(id);
+        if (!appointment.getDoctor().getId().equals(doctor.getId())) {
+            throw new RuntimeException("You can only approve your own appointments");
+        }
+        appointment.setStatus("APPROVED");
+        return appointmentRepository.save(appointment);
     }
 }
