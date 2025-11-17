@@ -1,10 +1,17 @@
 package com.example.health_platform.modules.medicalrecord.DTO;
 
 
-import lombok.Data;
+
+import lombok.*;
 
 @Data
-public class MedicalProfileRequest {
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class MedicalProfileResponse {
+
+    private Long id;
+    private Long userId;
     private String bloodGroup;
     private String allergies;
     private String chronicDiseases;

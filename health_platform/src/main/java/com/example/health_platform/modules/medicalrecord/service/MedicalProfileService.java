@@ -1,35 +1,63 @@
 package com.example.health_platform.modules.medicalrecord.service;
-
-import com.example.health_platform.modules.medicalrecord.DTO.MedicalProfileRequest;
-import com.example.health_platform.modules.medicalrecord.model.MedicalProfile;
-import com.example.health_platform.modules.medicalrecord.repository.MedicalProfileRepository;
 import com.example.health_platform.auth.model.User;
-import com.example.health_platform.modules.user.service.UserService;
+import com.example.health_platform.auth.repository.UserRepository;
+import com.example.health_platform.modules.medicalrecord.DTO.MedicalProfileRequest;
+import com.example.health_platform.modules.medicalrecord.DTO.MedicalProfileResponse;
+import com.example.health_platform.modules.medicalrecord.exception.MedicalProfileNotFoundException;
+import com.example.health_platform.modules.medicalrecord.model.MedicalProfile;
+
+import com.example.health_platform.modules.medicalrecord.repository.MedicalProfileRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
 
 @Service
 @RequiredArgsConstructor
 public class MedicalProfileService {
 
-    private final MedicalProfileRepository profileRepository;
-    private final UserService userService;
+    private final MedicalProfileRepository medicalProfileRepository;
+    private final UserRepository userRepository;
 
-    public MedicalProfile createOrUpdate(Long userId, MedicalProfileRequest req) {
+    public MedicalProfileResponse createOrUpdate(Long userId, MedicalProfileRequest request) {
 
-        // Get user by ID
-        User user = userService.getUserById(userId);
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found"));
 
-        // Find existing profile or create new
-        MedicalProfile profile = profileRepository.findByUserId(userId)
-                .orElse(new MedicalProfile());
+        MedicalProfile profile = medicalProfileRepository
+                .findByUserId(userId)
+                .orElse(MedicalProfile.builder().user(user).build());
 
-        profile.setUser(user);
-        profile.setBloodGroup(req.getBloodGroup());
-        profile.setAllergies(req.getAllergies());
-        profile.setChronicDiseases(req.getChronicDiseases());
-        profile.setMedications(req.getMedications());
+        profile.setBloodGroup(request.getBloodGroup());
+        profile.setAllergies(request.getAllergies());
+        profile.setChronicDiseases(request.getChronicDiseases());
+        profile.setMedications(request.getMedications());
+        profile.setEmergencyContactName(request.getEmergencyContactName());
+        profile.setEmergencyContactPhone(request.getEmergencyContactPhone());
 
-        return profileRepository.save(profile);
+        medicalProfileRepository.save(profile);
+
+        return toResponse(profile);
+    }
+
+    public MedicalProfileResponse getByUserId(Long userId) {
+
+        MedicalProfile profile = medicalProfileRepository
+                .findByUserId(userId)
+                .orElseThrow(() -> new MedicalProfileNotFoundException("Medical profile not found"));
+
+        return toResponse(profile);
+    }
+
+    private MedicalProfileResponse toResponse(MedicalProfile profile) {
+        return MedicalProfileResponse.builder()
+                .id(profile.getId())
+                .userId(profile.getUser().getId())
+                .bloodGroup(profile.getBloodGroup())
+                .allergies(profile.getAllergies())
+                .chronicDiseases(profile.getChronicDiseases())
+                .medications(profile.getMedications())
+                .emergencyContactName(profile.getEmergencyContactName())
+                .emergencyContactPhone(profile.getEmergencyContactPhone())
+                .build();
     }
 }

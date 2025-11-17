@@ -1,28 +1,28 @@
 package com.example.health_platform.modules.medicalrecord.model;
-
 import com.example.health_platform.auth.model.User;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
-@Data
 @Entity
-@Table(name = "medical_profiles")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class MedicalProfile {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Link to User
     @OneToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @JoinColumn(name = "user_id", unique = true)
     private User user;
 
     private String bloodGroup;
-
-    private String allergies;
-
-    private String chronicDiseases;
-
-    private String medications;
+    private String allergies;        // comma-separated
+    private String chronicDiseases;  // comma-separated
+    private String medications;      // comma-separated
+    private String emergencyContactName;
+    private String emergencyContactPhone;
 }

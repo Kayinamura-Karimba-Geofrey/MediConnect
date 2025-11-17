@@ -1,29 +1,28 @@
 package com.example.health_platform.modules.medicalrecord.controller;
-
-import com.example.health_platform.auth.security.UserPrincipal;
 import com.example.health_platform.modules.medicalrecord.DTO.MedicalProfileRequest;
-import com.example.health_platform.modules.medicalrecord.model.MedicalProfile;
+import com.example.health_platform.modules.medicalrecord.DTO.MedicalProfileResponse;
 import com.example.health_platform.modules.medicalrecord.service.MedicalProfileService;
+import com.example.health_platform.auth.security.CurrentUser;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/medical")
+@RequestMapping("/medical/profile")
 @RequiredArgsConstructor
 public class MedicalProfileController {
 
     private final MedicalProfileService medicalProfileService;
 
-    @PostMapping("/profile")
-    public ResponseEntity<MedicalProfile> createOrUpdateProfile(
-            @AuthenticationPrincipal UserPrincipal currentUser,
-            @RequestBody MedicalProfileRequest req
-    ) {
-        MedicalProfile profile =
-                medicalProfileService.createOrUpdate(currentUser.getId(), req);
+    @PostMapping
+    public MedicalProfileResponse createOrUpdate(
+            @CurrentUser Long currentUserId,
+            @RequestBody MedicalProfileRequest request) {
 
-        return ResponseEntity.ok(profile);
+        return medicalProfileService.createOrUpdate(currentUserId, request);
+    }
+
+    @GetMapping("/{userId}")
+    public MedicalProfileResponse getByUserId(@PathVariable Long userId) {
+        return medicalProfileService.getByUserId(userId);
     }
 }
