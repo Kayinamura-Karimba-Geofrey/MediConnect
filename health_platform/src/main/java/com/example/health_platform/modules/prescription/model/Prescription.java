@@ -1,18 +1,10 @@
 package com.example.health_platform.modules.prescription.model;
 
-
-
 import com.example.health_platform.auth.model.User;
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.util.List;
 
-import java.time.LocalDateTime;
-
-@Data
-@NoArgsConstructor
 @Entity
-@Table(name = "prescriptions")
 public class Prescription {
 
     @Id
@@ -20,20 +12,36 @@ public class Prescription {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "doctor_id", nullable = false)
+    @JoinColumn(name = "doctor_id")
     private User doctor;
 
     @ManyToOne
-    @JoinColumn(name = "patient_id", nullable = false)
+    @JoinColumn(name = "patient_id")
     private User patient;
 
-    @Column(nullable = false)
-    private String medicines; // comma-separated e.g., "Paracetamol 500mg, Amoxicillin 250mg"
+    @ElementCollection
+    private List<String> medicines;
 
     private String notes;
 
-    @Column(nullable = false)
     private boolean dispensed = false;
 
-    private LocalDateTime createdAt = LocalDateTime.now();
+    // Getters & Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public User getDoctor() { return doctor; }
+    public void setDoctor(User doctor) { this.doctor = doctor; }
+
+    public User getPatient() { return patient; }
+    public void setPatient(User patient) { this.patient = patient; }
+
+    public List<String> getMedicines() { return medicines; }
+    public void setMedicines(List<String> medicines) { this.medicines = medicines; }
+
+    public String getNotes() { return notes; }
+    public void setNotes(String notes) { this.notes = notes; }
+
+    public boolean isDispensed() { return dispensed; }
+    public void setDispensed(boolean dispensed) { this.dispensed = dispensed; }
 }

@@ -1,7 +1,7 @@
 package com.example.health_platform.modules.pharmarcy.model;
 
 import com.example.health_platform.auth.model.User;
-import com.example.health_platform.modules.doctor.model.Prescription;
+import com.example.health_platform.modules.doctor.model.Prescription1;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -19,7 +19,7 @@ public class PharmacyOrder {
 
     @ManyToOne
     @JoinColumn(name = "prescription_id")
-    private Prescription prescription;
+    private Prescription1 prescription;
 
     @ElementCollection
     private List<String> medicines;
@@ -36,8 +36,8 @@ public class PharmacyOrder {
     public User getPatient() { return patient; }
     public void setPatient(User patient) { this.patient = patient; }
 
-    public Prescription getPrescription() { return prescription; }
-    public void setPrescription(Prescription prescription) { this.prescription = prescription; }
+    public Prescription1 getPrescription() { return prescription; }
+    public void setPrescription(Prescription1 prescription) { this.prescription = prescription; }
 
     public List<String> getMedicines() { return medicines; }
     public void setMedicines(List<String> medicines) { this.medicines = medicines; }

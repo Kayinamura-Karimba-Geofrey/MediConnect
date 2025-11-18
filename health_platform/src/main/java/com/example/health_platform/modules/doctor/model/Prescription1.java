@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-public class Prescription {
+public class Prescription1 {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

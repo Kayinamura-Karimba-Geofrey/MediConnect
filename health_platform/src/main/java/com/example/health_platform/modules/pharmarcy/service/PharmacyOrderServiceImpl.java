@@ -1,7 +1,7 @@
 package com.example.health_platform.modules.pharmarcy.service;
 
 import com.example.health_platform.auth.model.User;
-import com.example.health_platform.modules.doctor.model.Prescription;
+import com.example.health_platform.modules.doctor.model.Prescription1;
 import com.example.health_platform.modules.doctor.repository.PrescriptionRepository;
 import com.example.health_platform.modules.pharmarcy.DTO.CreatePharmacyOrderDTO;
 import com.example.health_platform.modules.pharmarcy.DTO.PharmacyOrderResponseDTO;
@@ -27,7 +27,7 @@ public class PharmacyOrderServiceImpl implements PharmacyOrderService {
 
     @Override
     public PharmacyOrderResponseDTO createOrder(User patient, CreatePharmacyOrderDTO dto) {
-        Prescription prescription = prescriptionRepository.findById(dto.getPrescriptionId())
+        Prescription1 prescription = prescriptionRepository.findById(dto.getPrescriptionId())
                 .orElseThrow(() -> new RuntimeException("Prescription not found"));
 
         PharmacyOrder order = new PharmacyOrder();
