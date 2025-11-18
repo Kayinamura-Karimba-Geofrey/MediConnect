@@ -1,14 +1,15 @@
 package com.example.health_platform.auth.model;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import jakarta.persistence.*;
-
 
 @Data
 @NoArgsConstructor
 @Entity
 @Table(name = "users")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,32 +27,26 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @Column (nullable = false )
+    @Column(nullable = false)
     private String address;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
 
-    
     private String verificationCode;
-    private boolean verified=false;
+    private boolean verified = false;
 
     private String refreshToken;
 
-   
-
     @Column(name = "profile_photo")
-@Lob
-private byte[] profilePhoto;
+    @Lob
+    private byte[] profilePhoto;
 
+    
 
-public byte[] getProfilePhoto() {
-    return profilePhoto;
-}
-
-public void setProfilePhoto(byte[] profilePhoto) {
-    this.profilePhoto = profilePhoto;
-}
-
+    private String bloodGroup;            
+    private String allergies;             
+    private String chronicDiseases;       
+    private String emergencyContact;      
 }
