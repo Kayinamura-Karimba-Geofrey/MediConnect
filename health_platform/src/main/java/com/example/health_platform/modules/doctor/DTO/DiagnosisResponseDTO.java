@@ -1,18 +1,14 @@
 package com.example.health_platform.modules.doctor.DTO;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+public class DiagnosisResponseDTO {
 
-public class DiagnosisRequestDTO {
-
-    @NotNull
+    private Long id;
     private Long visitId;
-
-    @NotBlank
     private String diagnosisText;
-
-    @NotBlank
     private String treatment;
+
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
     public Long getVisitId() { return visitId; }
     public void setVisitId(Long visitId) { this.visitId = visitId; }

@@ -1,6 +1,4 @@
 package com.example.health_platform.modules.doctor.model;
-import com.example.health_platform.modules.doctor.model.Visit;
-
 
 import com.example.health_platform.auth.model.User;
 import jakarta.persistence.*;
@@ -21,12 +19,12 @@ public class Diagnosis {
     @JoinColumn(name = "visit_id")
     private Visit visit;
 
-    private String diagnosis;
+    private String diagnosisText;
     private String treatment;
 
     private LocalDateTime createdAt = LocalDateTime.now();
 
-    // getters & setters
+    // Getters & Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
@@ -36,8 +34,8 @@ public class Diagnosis {
     public Visit getVisit() { return visit; }
     public void setVisit(Visit visit) { this.visit = visit; }
 
-    public String getDiagnosis() { return diagnosis; }
-    public void setDiagnosis(String diagnosis) { this.diagnosis = diagnosis; }
+    public String getDiagnosisText() { return diagnosisText; }
+    public void setDiagnosisText(String diagnosisText) { this.diagnosisText = diagnosisText; }
 
     public String getTreatment() { return treatment; }
     public void setTreatment(String treatment) { this.treatment = treatment; }
@@ -45,4 +43,3 @@ public class Diagnosis {
     public LocalDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
 }
-
