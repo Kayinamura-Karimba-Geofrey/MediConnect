@@ -1,4 +1,5 @@
 package com.example.health_platform.modules.doctor.model;
+import com.example.health_platform.modules.doctor.model.Visit;
 
 
 import com.example.health_platform.auth.model.User;
@@ -18,7 +19,7 @@ public class Diagnosis {
 
     @ManyToOne
     @JoinColumn(name = "visit_id")
-    private String visit;
+    private Visit visit;
 
     private String diagnosis;
     private String treatment;
@@ -32,8 +33,8 @@ public class Diagnosis {
     public User getDoctor() { return doctor; }
     public void setDoctor(User doctor) { this.doctor = doctor; }
 
-    public String getVisit() { return visit; }
-    public void setVisit(String visit) { this.visit = visit; }
+    public Visit getVisit() { return visit; }
+    public void setVisit(Visit visit) { this.visit = visit; }
 
     public String getDiagnosis() { return diagnosis; }
     public void setDiagnosis(String diagnosis) { this.diagnosis = diagnosis; }
