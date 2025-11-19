@@ -3,6 +3,7 @@ package com.example.health_platform.modules.notification.model;
 import com.example.health_platform.modules.user.model.User;
 
 
+
 import jakarta.persistence.*;
 import lombok.*;
 
