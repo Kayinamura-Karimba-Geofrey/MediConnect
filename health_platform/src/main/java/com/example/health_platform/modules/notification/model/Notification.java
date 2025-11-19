@@ -1,6 +1,6 @@
 package com.example.health_platform.modules.notification.model;
 
-import com.example.health_platform.modules.user.model.User;
+import com.example.health_platform.auth.model.User;
 
 
 
@@ -23,8 +23,11 @@ public class Notification {
 
     private String message;
 
-    private boolean isRead = false;
 
+    @Builder.Default
+    private boolean isRead = false;
+    
+    @Builder.Default
     private LocalDateTime timeStamp = LocalDateTime.now();
 
     @ManyToOne
