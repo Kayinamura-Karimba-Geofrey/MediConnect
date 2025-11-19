@@ -2,7 +2,7 @@ package com.example.health_platform.modules.pharmarcy.service;
 
 import com.example.health_platform.auth.model.User;
 import com.example.health_platform.modules.doctor.model.Prescription1;
-import com.example.health_platform.modules.doctor.repository.PrescriptionRepository;
+import com.example.health_platform.modules.doctor.repository.PrescriptionRepository1;
 import com.example.health_platform.modules.pharmarcy.DTO.CreatePharmacyOrderDTO;
 import com.example.health_platform.modules.pharmarcy.DTO.PharmacyOrderResponseDTO;
 import com.example.health_platform.modules.pharmarcy.model.OrderStatus;
@@ -17,10 +17,10 @@ import java.util.stream.Collectors;
 public class PharmacyOrderServiceImpl implements PharmacyOrderService {
 
     private final PharmacyOrderRepository orderRepository;
-    private final PrescriptionRepository prescriptionRepository;
+    private final PrescriptionRepository1 prescriptionRepository;
 
     public PharmacyOrderServiceImpl(PharmacyOrderRepository orderRepository,
-                                    PrescriptionRepository prescriptionRepository) {
+                                    PrescriptionRepository1 prescriptionRepository) {
         this.orderRepository = orderRepository;
         this.prescriptionRepository = prescriptionRepository;
     }

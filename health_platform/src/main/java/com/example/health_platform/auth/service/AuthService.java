@@ -9,7 +9,7 @@ import com.example.health_platform.auth.model.dto.UserResponse2;
 import com.example.health_platform.auth.model.dto.VerifyRequest;
 
 import jakarta.servlet.http.HttpServletRequest;
-import java.util.Optional;
+//import java.util.Optional;
 
 public interface AuthService {
 

@@ -19,7 +19,7 @@ public class JwtUtils {
         return Keys.hmacShaKeyFor(JWT_SECRET.getBytes());
     }
 
-    // Generate JWT token
+    
     public String generateToken(String email) {
         return Jwts.builder()
                 .setSubject(email)
