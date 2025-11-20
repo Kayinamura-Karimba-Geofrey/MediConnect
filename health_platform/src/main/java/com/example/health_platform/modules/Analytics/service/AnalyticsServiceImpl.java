@@ -7,8 +7,8 @@ import com.example.health_platform.modules.billing.model.BillStatus;
 import com.example.health_platform.modules.billing.repository.BillRepository;
 import com.example.health_platform.modules.appointment.repository.AppointmentRepository;
 import com.example.health_platform.modules.visit.repository.VisitRepository;
-import com.example.health_platform.modules.Analytics.service.AnalyticsService;
-import org.springframework.beans.factory.annotation.Autowired;
+//import com.example.health_platform.modules.Analytics.service.AnalyticsService;
+//import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;

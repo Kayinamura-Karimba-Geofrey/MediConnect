@@ -1,13 +1,11 @@
 package com.example.health_platform.modules.Analytics.controller;
-
-import com.example.health_platform.modules.admin.DTO.PlatformStatsDTO;
 import com.example.health_platform.modules.Analytics.service.AnalyticsService;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.health_platform.modules.admin.DTO.AdminStatsDTO;
+
 import com.example.health_platform.modules.admin.service.AdminService;
 
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 import java.util.List;
@@ -17,15 +15,17 @@ import java.util.List;
 public class AnalyticsController {
 
     private final AnalyticsService analyticsService;
+    private final AdminService adminService;
 
-    public AnalyticsController(AnalyticsService analyticsService) {
+    public AnalyticsController(AnalyticsService analyticsService, AdminService adminService) {
         this.analyticsService = analyticsService;
+        this.adminService = adminService;
     }
 
     // GET /analytics/stats
     @GetMapping("/stats")
-    public ResponseEntity<PlatformStatsDTO> getStats() {
-        return ResponseEntity.ok(AdminService.getPlatformStats());
+    public ResponseEntity<AdminStatsDTO> getStats() {
+        return ResponseEntity.ok(adminService.getPlatformStats());
     }
 
     // GET /analytics/revenue

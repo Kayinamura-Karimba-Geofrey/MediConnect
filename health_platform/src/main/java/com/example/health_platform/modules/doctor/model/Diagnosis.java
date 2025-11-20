@@ -17,7 +17,7 @@ public class Diagnosis {
 
     @ManyToOne
     @JoinColumn(name = "visit_id")
-    private Visit visit;
+    private Visit1 visit;
 
     private String diagnosisText;
     private String treatment;
@@ -31,8 +31,8 @@ public class Diagnosis {
     public User getDoctor() { return doctor; }
     public void setDoctor(User doctor) { this.doctor = doctor; }
 
-    public Visit getVisit() { return visit; }
-    public void setVisit(Visit visit) { this.visit = visit; }
+    public Visit1 getVisit() { return visit; }
+    public void setVisit(Visit1 visit) { this.visit = visit; }
 
     public String getDiagnosisText() { return diagnosisText; }
     public void setDiagnosisText(String diagnosisText) { this.diagnosisText = diagnosisText; }

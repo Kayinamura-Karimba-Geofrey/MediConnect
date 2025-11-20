@@ -6,21 +6,18 @@ import com.example.health_platform.auth.repository.UserRepository;
 import com.example.health_platform.modules.admin.DTO.AdminStatsDTO;
 import com.example.health_platform.modules.appointment.model.Appointment;
 import com.example.health_platform.modules.appointment.repository.AppointmentRepository;
+
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class AdminServiceImpl implements AdminService {
 
     private final UserRepository userRepository;
     private final AppointmentRepository appointmentRepository;
-
-    public AdminServiceImpl(UserRepository userRepository,
-                            AppointmentRepository appointmentRepository) {
-        this.userRepository = userRepository;
-        this.appointmentRepository = appointmentRepository;
-    }
 
     @Override
     public List<User> getAllUsers() {
@@ -32,22 +29,26 @@ public class AdminServiceImpl implements AdminService {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
-        user.setSuspended(true);  // You must add boolean suspended in User entity
+        user.setSuspended(true);
+
         return userRepository.save(user);
     }
 
     @Override
     public AdminStatsDTO getPlatformStats() {
+
         long totalUsers = userRepository.count();
         long totalDoctors = userRepository.countByRole(Role.DOCTORS);
         long totalPatients = userRepository.countByRole(Role.PATIENTS);
         long totalAppointments = appointmentRepository.count();
+        long approvedDoctors = userRepository.countApprovedDoctors();
 
         AdminStatsDTO dto = new AdminStatsDTO();
         dto.setTotalUsers(totalUsers);
         dto.setTotalDoctors(totalDoctors);
         dto.setTotalPatients(totalPatients);
         dto.setTotalAppointments(totalAppointments);
+        dto.setApprovedDoctors(approvedDoctors);
 
         return dto;
     }
@@ -62,11 +63,8 @@ public class AdminServiceImpl implements AdminService {
         User doctor = userRepository.findById(doctorId)
                 .orElseThrow(() -> new RuntimeException("Doctor not found"));
 
-        if (doctor.getRole() != Role.DOCTORS) {
-            throw new RuntimeException("User is not a doctor");
-        }
+        doctor.setApproved(true);
 
-        doctor.setApproved(true); 
         return userRepository.save(doctor);
     }
 }

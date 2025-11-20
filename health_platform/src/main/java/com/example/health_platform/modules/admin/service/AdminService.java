@@ -16,6 +16,4 @@ public interface AdminService {
     List<?> getAllAppointments();
 
     User approveDoctor(Long doctorId);
-
-    
 }
