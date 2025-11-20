@@ -49,4 +49,8 @@ public class User {
     private String allergies;             
     private String chronicDiseases;       
     private String emergencyContact;      
+
+    private boolean suspended = false;     
+    private boolean doctorApproved = false; 
+
 }
