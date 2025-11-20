@@ -1,5 +1,7 @@
 package com.example.health_platform.modules.billing.model;
 
-public class BillStatus {
-    
+public enum BillStatus {
+    PENDING,
+    PAID,
+    CANCELLED
 }
