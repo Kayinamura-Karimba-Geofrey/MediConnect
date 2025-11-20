@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Run Current Class",
+            "request": "launch",
+            "mainClass": "",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "java",
+            "name": "HealthPlatformApplication",
+            "request": "launch",
+            "mainClass": "com.example.health_platform.HealthPlatformApplication",
+            "projectName": "health_platform"
+        }
+    ]
+}
