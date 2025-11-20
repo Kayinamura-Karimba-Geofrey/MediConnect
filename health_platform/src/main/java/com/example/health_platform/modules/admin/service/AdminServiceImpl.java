@@ -4,8 +4,8 @@ import com.example.health_platform.auth.model.Role;
 import com.example.health_platform.auth.model.User;
 import com.example.health_platform.auth.repository.UserRepository;
 import com.example.health_platform.modules.admin.DTO.AdminStatsDTO;
+import com.example.health_platform.modules.appointment.model.Appointment;
 import com.example.health_platform.modules.appointment.repository.AppointmentRepository;
-import com.example.health_platform.modules.doctor.repository.VisitRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,16 +14,11 @@ import java.util.List;
 public class AdminServiceImpl implements AdminService {
 
     private final UserRepository userRepository;
-    private final VisitRepository visitRepository;
     private final AppointmentRepository appointmentRepository;
 
-    public AdminServiceImpl(
-            UserRepository userRepository,
-            VisitRepository visitRepository,
-            AppointmentRepository appointmentRepository
-    ) {
+    public AdminServiceImpl(UserRepository userRepository,
+                            AppointmentRepository appointmentRepository) {
         this.userRepository = userRepository;
-        this.visitRepository = visitRepository;
         this.appointmentRepository = appointmentRepository;
     }
 
@@ -37,23 +32,28 @@ public class AdminServiceImpl implements AdminService {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
-        user.setSuspended(true);
+        user.setSuspended(true);  // You must add boolean suspended in User entity
         return userRepository.save(user);
     }
 
     @Override
     public AdminStatsDTO getPlatformStats() {
-        AdminStatsDTO stats = new AdminStatsDTO();
+        long totalUsers = userRepository.count();
+        long totalDoctors = userRepository.countByRole(Role.DOCTORS);
+        long totalPatients = userRepository.countByRole(Role.PATIENTS);
+        long totalAppointments = appointmentRepository.count();
 
-        stats.setTotalUsers(userRepository.count());
-        stats.setTotalVisits(visitRepository.count());
-        stats.setTotalAppointments(appointmentRepository.count());
+        AdminStatsDTO dto = new AdminStatsDTO();
+        dto.setTotalUsers(totalUsers);
+        dto.setTotalDoctors(totalDoctors);
+        dto.setTotalPatients(totalPatients);
+        dto.setTotalAppointments(totalAppointments);
 
-        return stats;
+        return dto;
     }
 
     @Override
-    public List<?> getAllAppointments() {
+    public List<Appointment> getAllAppointments() {
         return appointmentRepository.findAll();
     }
 
@@ -66,7 +66,7 @@ public class AdminServiceImpl implements AdminService {
             throw new RuntimeException("User is not a doctor");
         }
 
-        doctor.setDoctorApproved(true);
+        doctor.setApproved(true); 
         return userRepository.save(doctor);
     }
 }

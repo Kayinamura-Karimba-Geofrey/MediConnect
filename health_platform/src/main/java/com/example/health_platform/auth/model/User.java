@@ -43,6 +43,11 @@ public class User {
     @Lob
     private byte[] profilePhoto;
 
+    @Column(name = "approved")
+private boolean approved = false;
+
+
+
     
 
     private String bloodGroup;            

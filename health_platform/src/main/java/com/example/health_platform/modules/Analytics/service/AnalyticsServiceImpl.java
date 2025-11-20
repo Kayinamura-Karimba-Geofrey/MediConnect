@@ -7,6 +7,8 @@ import com.example.health_platform.modules.billing.model.BillStatus;
 import com.example.health_platform.modules.billing.repository.BillRepository;
 import com.example.health_platform.modules.appointment.repository.AppointmentRepository;
 import com.example.health_platform.modules.visit.repository.VisitRepository;
+import com.example.health_platform.modules.Analytics.service.AnalyticsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -36,8 +38,8 @@ public class AnalyticsServiceImpl implements AnalyticsService {
         PlatformStatsDTO stats = new PlatformStatsDTO();
 
         stats.setTotalUsers(userRepository.count());
-        stats.setTotalDoctors(userRepository.countByRole(Role.DOCTOR));
-        stats.setTotalPatients(userRepository.countByRole(Role.PATIENT));
+        stats.setTotalDoctors(userRepository.countByRole(Role.DOCTORS));
+        stats.setTotalPatients(userRepository.countByRole(Role.PATIENTS));
         stats.setTotalAppointments(appointmentRepository.count());
         stats.setTotalVisits(visitRepository.count());
 
