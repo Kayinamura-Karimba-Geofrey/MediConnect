@@ -1,6 +1,7 @@
 package com.example.health_platform.modules.doctor.model;
 
 import com.example.health_platform.auth.model.User;
+import com.example.health_platform.modules.visit.model.Visit;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
@@ -11,13 +12,15 @@ public class Diagnosis {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    // Doctor who wrote the diagnosis
     @ManyToOne
     @JoinColumn(name = "doctor_id")
     private User doctor;
 
+    // The visit this diagnosis belongs to
     @ManyToOne
     @JoinColumn(name = "visit_id")
-    private Visit1 visit;
+    private Visit visit;
 
     private String diagnosisText;
     private String treatment;
@@ -31,8 +34,8 @@ public class Diagnosis {
     public User getDoctor() { return doctor; }
     public void setDoctor(User doctor) { this.doctor = doctor; }
 
-    public Visit1 getVisit() { return visit; }
-    public void setVisit(Visit1 visit) { this.visit = visit; }
+    public Visit getVisit() { return visit; }
+    public void setVisit(Visit visit) { this.visit = visit; }
 
     public String getDiagnosisText() { return diagnosisText; }
     public void setDiagnosisText(String diagnosisText) { this.diagnosisText = diagnosisText; }

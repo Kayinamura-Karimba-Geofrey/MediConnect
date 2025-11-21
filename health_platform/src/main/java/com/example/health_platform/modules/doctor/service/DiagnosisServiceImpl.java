@@ -2,9 +2,10 @@ package com.example.health_platform.modules.doctor.service;
 import com.example.health_platform.modules.doctor.DTO.DiagnosisRequestDTO;
 import com.example.health_platform.modules.doctor.DTO.DiagnosisResponseDTO;
 import com.example.health_platform.modules.doctor.model.Diagnosis;
-import com.example.health_platform.modules.doctor.model.Visit1;
+
+import com.example.health_platform.modules.visit.model.Visit;
 import com.example.health_platform.modules.doctor.repository.DiagnosisRepository;
-import com.example.health_platform.modules.doctor.repository.VisitRepository2;
+import com.example.health_platform.modules.visit.repository.VisitRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -14,9 +15,9 @@ import java.util.stream.Collectors;
 public class DiagnosisServiceImpl implements DiagnosisService {
 
     private final DiagnosisRepository diagnosisRepository;
-    private final VisitRepository2 visitRepository;
+    private final VisitRepository visitRepository;
 
-    public DiagnosisServiceImpl(DiagnosisRepository diagnosisRepository, VisitRepository2 visitRepository) {
+    public DiagnosisServiceImpl(DiagnosisRepository diagnosisRepository, VisitRepository visitRepository) {
         this.diagnosisRepository = diagnosisRepository;
         this.visitRepository = visitRepository;
     }
@@ -24,7 +25,7 @@ public class DiagnosisServiceImpl implements DiagnosisService {
     @Override
     public DiagnosisResponseDTO createDiagnosis(DiagnosisRequestDTO dto) {
 
-        Visit1 visit = visitRepository.findById(dto.getVisitId())
+        Visit visit = visitRepository.findById(dto.getVisitId())
                 .orElseThrow(() -> new RuntimeException("Visit not found"));
 
         Diagnosis diagnosis = new Diagnosis();
@@ -46,7 +47,7 @@ public class DiagnosisServiceImpl implements DiagnosisService {
     @Override
     public List<DiagnosisResponseDTO> getDiagnosisByVisit(Long visitId) {
 
-        Visit1 visit = visitRepository.findById(visitId)
+        Visit visit = visitRepository.findById(visitId)
                 .orElseThrow(() -> new RuntimeException("Visit not found"));
 
         return diagnosisRepository.findByVisit(visit)
