@@ -12,29 +12,29 @@ import java.util.Date;
 @Component
 public class JwtUtils {
 
-    private final String JWT_SECRET = "MySuperSecretKeyForJWT123!MySuperSecretKeyForJWT123!";
-    private final long JWT_EXPIRATION_MS = 24 * 60 * 60 * 1000; // 1 day
+    private static final String JWT_SECRET = "MySuperSecretKeyForJWT123!MySuperSecretKeyForJWT123!";
+    private static final long JWT_EXPIRATION_MS = 24 * 60 * 60 * 1000; // 1 day
 
     private SecretKey getSigningKey() {
         return Keys.hmacShaKeyFor(JWT_SECRET.getBytes());
     }
 
-    
     public String generateToken(String email) {
         return Jwts.builder()
                 .setSubject(email)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + JWT_EXPIRATION_MS))
-                .signWith(SignatureAlgorithm.HS256, getSigningKey().getEncoded())
+                .signWith(getSigningKey(), SignatureAlgorithm.HS256) // ✅ new correct version
                 .compact();
     }
 
-    
     public String getEmailFromJwt(String token) {
-        Claims claims = Jwts.parser()
-                .setSigningKey(getSigningKey().getEncoded())
+        Claims claims = Jwts.parserBuilder()
+                .setSigningKey(getSigningKey()) // ✅ use the key directly
+                .build()
                 .parseClaimsJws(token)
                 .getBody();
+
         return claims.getSubject();
     }
 }
