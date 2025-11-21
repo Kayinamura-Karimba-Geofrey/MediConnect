@@ -3,7 +3,7 @@ package com.example.health_platform.auth.security;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -20,6 +20,12 @@ public class SecurityConfig {
         this.userDetailsService = userDetailsService;
     }
 
+    // Register the CustomUserDetailsService so it is actually used by Spring Security
+    @Bean
+    public org.springframework.security.core.userdetails.UserDetailsService userDetailsService() {
+        return userDetailsService;
+    }
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
@@ -27,29 +33,24 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
 
             .authorizeHttpRequests(auth -> auth
-                // --- Swagger (no authentication required) ---
                 .requestMatchers(
-                    "/swagger-ui/**",
-                    "/swagger-ui.html",
-                    "/v3/api-docs/**",
-                    "/api-docs/**",
-                    "/swagger-resources/**",
-                    "/webjars/**"
+                        "/swagger-ui/**",
+                        "/swagger-ui.html",
+                        "/v3/api-docs/**",
+                        "/api-docs/**",
+                        "/swagger-resources/**",
+                        "/webjars/**"
                 ).permitAll()
 
-                // --- Public auth endpoints (register/login) ---
                 .requestMatchers("/auth/**").permitAll()
 
-                // --- Role-based protected endpoints ---
                 .requestMatchers("/admin/**").hasRole("ADMIN")
                 .requestMatchers("/doctor/**").hasRole("DOCTOR")
                 .requestMatchers("/patient/**").hasRole("PATIENT")
 
-                // Everything else requires login
                 .anyRequest().authenticated()
             )
 
-            // Disable login page + basic login because you use JWT
             .httpBasic(httpBasic -> httpBasic.disable())
             .formLogin(form -> form.disable());
 
@@ -57,12 +58,8 @@ public class SecurityConfig {
     }
 
     @Bean
-    public AuthenticationManager authenticationManager(HttpSecurity http, PasswordEncoder encoder) throws Exception {
-        return http.getSharedObject(AuthenticationManagerBuilder.class)
-                .userDetailsService(userDetailsService)
-                .passwordEncoder(encoder)
-                .and()
-                .build();
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
+        return config.getAuthenticationManager();
     }
 
     @Bean
