@@ -1,10 +1,8 @@
 package com.example.health_platform.auth.security;
 
-
 import com.example.health_platform.auth.model.User;
 import com.example.health_platform.auth.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -23,6 +21,6 @@ public class CustomUserDetailsService implements UserDetailsService {
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found: " + email));
 
-        return new UserPrincipal(user);
+        return new CustomUserDetails(user); // <-- This is your UserDetails implementation
     }
 }

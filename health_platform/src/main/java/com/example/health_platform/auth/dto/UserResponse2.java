@@ -1,4 +1,4 @@
-package com.example.health_platform.auth.model.dto;
+package com.example.health_platform.auth.dto;
 
 import com.example.health_platform.auth.model.Role;
 import lombok.Data;

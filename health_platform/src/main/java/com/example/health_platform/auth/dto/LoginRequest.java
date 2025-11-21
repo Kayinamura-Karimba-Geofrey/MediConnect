@@ -1,4 +1,4 @@
-package com.example.health_platform.auth.model.dto;
+package com.example.health_platform.auth.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

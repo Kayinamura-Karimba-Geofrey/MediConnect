@@ -4,12 +4,14 @@ import com.example.health_platform.modules.doctor.DTO.DiagnosisRequestDTO;
 import com.example.health_platform.modules.doctor.DTO.DiagnosisResponseDTO;
 import com.example.health_platform.modules.doctor.service.DiagnosisService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/doctor/diagnosis")
+@PreAuthorize("hasRole('DOCTOR')")
 public class DoctorDiagnosisController {
 
     private final DiagnosisService diagnosisService;

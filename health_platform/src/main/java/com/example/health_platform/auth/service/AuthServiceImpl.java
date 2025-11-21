@@ -1,12 +1,12 @@
 package com.example.health_platform.auth.service;
 
+import com.example.health_platform.auth.dto.JwtResponse;
+import com.example.health_platform.auth.dto.LoginRequest;
+import com.example.health_platform.auth.dto.RefreshTokenRequest;
+import com.example.health_platform.auth.dto.RegisterRequest;
+import com.example.health_platform.auth.dto.UserResponse2;
+import com.example.health_platform.auth.dto.VerifyRequest;
 import com.example.health_platform.auth.model.User;
-import com.example.health_platform.auth.model.dto.JwtResponse;
-import com.example.health_platform.auth.model.dto.LoginRequest;
-import com.example.health_platform.auth.model.dto.RefreshTokenRequest;
-import com.example.health_platform.auth.model.dto.RegisterRequest;
-import com.example.health_platform.auth.model.dto.UserResponse2;
-import com.example.health_platform.auth.model.dto.VerifyRequest;
 import com.example.health_platform.auth.repository.UserRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.core.context.SecurityContextHolder;
