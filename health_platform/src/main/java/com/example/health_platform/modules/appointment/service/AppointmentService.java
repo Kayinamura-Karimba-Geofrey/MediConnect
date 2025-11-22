@@ -20,7 +20,7 @@ public interface AppointmentService {
 
     void deleteAppointment(Long id);
 
-    // New methods
+    
     Appointment updateAppointment(Long id, LocalDateTime newDate);
 
     Appointment cancelAppointment(Long id, User patient);

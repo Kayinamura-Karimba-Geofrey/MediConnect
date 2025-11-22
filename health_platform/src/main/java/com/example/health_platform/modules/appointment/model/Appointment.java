@@ -2,9 +2,12 @@ package com.example.health_platform.modules.appointment.model;
 
 import com.example.health_platform.auth.model.User;
 import jakarta.persistence.*;
+import lombok.Data;
+
 import java.time.LocalDateTime;
 
 @Entity
+@Data
 public class Appointment {
 
     @Id
@@ -23,24 +26,7 @@ public class Appointment {
 
     private String reason;
 
-    private String status; // NEW: "PENDING", "CANCELLED", "APPROVED"
+    private String status; 
 
-    // Getters and setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-
-    public User getPatient() { return patient; }
-    public void setPatient(User patient) { this.patient = patient; }
-
-    public User getDoctor() { return doctor; }
-    public void setDoctor(User doctor) { this.doctor = doctor; }
-
-    public LocalDateTime getAppointmentDate() { return appointmentDate; }
-    public void setAppointmentDate(LocalDateTime appointmentDate) { this.appointmentDate = appointmentDate; }
-
-    public String getReason() { return reason; }
-    public void setReason(String reason) { this.reason = reason; }
-
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
+    
 }
