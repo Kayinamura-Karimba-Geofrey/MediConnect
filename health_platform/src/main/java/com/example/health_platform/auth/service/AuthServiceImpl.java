@@ -24,7 +24,7 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public User register(RegisterRequest request) {
-        // Implement registration logic
+        
         return null;
     }
 
@@ -43,7 +43,7 @@ public class AuthServiceImpl implements AuthService {
         return null;
     }
 
-    // Returns actual User entity
+    
     @Override
     public User getCurrentUser(HttpServletRequest request) {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -53,7 +53,7 @@ public class AuthServiceImpl implements AuthService {
                 .orElseThrow(() -> new RuntimeException("User not found"));
     }
 
-    // Returns UserResponse2 DTO for controller response
+    
     @Override
     public UserResponse2 getCurrentUserDto(HttpServletRequest request) {
         User user = getCurrentUser(request);

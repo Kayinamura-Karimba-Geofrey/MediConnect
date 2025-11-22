@@ -44,11 +44,7 @@ public class User {
     private byte[] profilePhoto;
 
     @Column(name = "approved")
-private boolean approved = false;
-
-
-
-    
+    private boolean approved = false;
 
     private String bloodGroup;            
     private String allergies;             

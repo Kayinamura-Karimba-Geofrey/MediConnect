@@ -9,7 +9,7 @@ import com.example.health_platform.auth.dto.VerifyRequest;
 import com.example.health_platform.auth.model.User;
 
 import jakarta.servlet.http.HttpServletRequest;
-//import java.util.Optional;
+
 
 public interface AuthService {
 
@@ -21,9 +21,8 @@ public interface AuthService {
 
     JwtResponse refreshToken(RefreshTokenRequest request);
 
-    // Returns User entity for service use (appointments, medical records, etc.)
+    
     User getCurrentUser(HttpServletRequest request);
 
-    // Returns DTO for controller responses (/auth/me)
     UserResponse2 getCurrentUserDto(HttpServletRequest request);
 }

@@ -14,16 +14,16 @@ import java.util.Date;
 @Service
 public class JwtService {
 
-    // Secret keys (in production, store securely, e.g., environment variables)
-    private final String ACCESS_SECRET_STRING = "ACCESS_SECRET_KEY_123456789012345678901234"; // 32+ chars for HS256
+    
+    private final String ACCESS_SECRET_STRING = "ACCESS_SECRET_KEY_123456789012345678901234"; 
     private final String REFRESH_SECRET_STRING = "REFRESH_SECRET_KEY_4567890123456789012345";
 
     private final Key ACCESS_SECRET = Keys.hmacShaKeyFor(ACCESS_SECRET_STRING.getBytes());
     private final Key REFRESH_SECRET = Keys.hmacShaKeyFor(REFRESH_SECRET_STRING.getBytes());
 
-    // ------------------- Generate Tokens -------------------
+    
 
-    // Access Token (15 min)
+    
     public String generateAccessToken(String userId, Role role) {
         return Jwts.builder()
                 .setSubject(userId)
@@ -33,7 +33,7 @@ public class JwtService {
                 .compact();
     }
 
-    // Refresh Token (30 days)
+    
     public String generateRefreshToken(String userId) {
         return Jwts.builder()
                 .setSubject(userId)
@@ -42,7 +42,7 @@ public class JwtService {
                 .compact();
     }
 
-    // ------------------- Validate Tokens -------------------
+    
 
     public boolean validateAccessToken(String token) {
         try {
@@ -68,7 +68,7 @@ public class JwtService {
         }
     }
 
-    // ------------------- Extract Claims -------------------
+    
 
     public String extractUserIdFromAccessToken(String token) {
         Claims claims = Jwts.parserBuilder()
