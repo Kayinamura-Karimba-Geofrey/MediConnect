@@ -17,15 +17,15 @@ public class NotificationController {
 
     private final NotificationService notificationService;
 
-    // GET /notifications/my
+    
     @GetMapping("/my")
     public ResponseEntity<List<NotificationResponse>> getMyNotifications(
-            @RequestParam Long userId // Replace with authentication extraction later
+            @RequestParam Long userId 
     ) {
         return ResponseEntity.ok(notificationService.getMyNotifications(userId));
     }
 
-    // PATCH /notifications/read/:id
+    
     @PatchMapping("/read/{id}")
     public ResponseEntity<NotificationResponse> markAsRead(@PathVariable Long id) {
         return ResponseEntity.ok(notificationService.markAsRead(id));

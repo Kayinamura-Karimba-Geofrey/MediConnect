@@ -20,9 +20,9 @@ public class MedicalProfile {
     private User user;
 
     private String bloodGroup;
-    private String allergies;        // comma-separated
-    private String chronicDiseases;  // comma-separated
-    private String medications;      // comma-separated
+    private String allergies;        
+    private String chronicDiseases;  
+    private String medications;      
     private String emergencyContactName;
     private String emergencyContactPhone;
 }

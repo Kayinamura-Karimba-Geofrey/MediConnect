@@ -18,7 +18,7 @@ public class NotificationService {
     private final NotificationRepository notificationRepository;
     private final UserRepository userRepository;
 
-    // Get notifications for a logged-in user
+    
     public List<NotificationResponse> getMyNotifications(Long userId) {
         User user = userRepository.findById(userId).orElseThrow();
 
@@ -47,7 +47,7 @@ public class NotificationService {
                 .build();
     }
 
-    // Internal method to create a notification
+    
     public void createNotification(Long userId, String message) {
         User user = userRepository.findById(userId).orElseThrow();
 

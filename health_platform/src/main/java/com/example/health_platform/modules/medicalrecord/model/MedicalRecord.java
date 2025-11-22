@@ -17,7 +17,7 @@ public class MedicalRecord {
 
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id") // column in medical_records table
+    @JoinColumn(name = "user_id") 
     private User user;
 
     private String diagnosis;
