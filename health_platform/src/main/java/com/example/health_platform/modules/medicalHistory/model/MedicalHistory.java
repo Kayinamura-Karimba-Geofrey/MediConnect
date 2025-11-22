@@ -1,9 +1,16 @@
 package com.example.health_platform.modules.medicalHistory.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+
+import lombok.Data;
+
 import java.time.LocalDate;
 
 @Entity
+@Data   
+@AllArgsConstructor
+ 
 @Table(name = "medical_histories")
 public class MedicalHistory {
 
@@ -26,7 +33,7 @@ public class MedicalHistory {
     @Column(length = 2000)
     private String notes;
 
-    // Constructors
+    
     public MedicalHistory() {
     }
 
@@ -38,22 +45,5 @@ public class MedicalHistory {
         this.notes = notes;
     }
 
-    // Getters and Setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-
-    public String getPatientName() { return patientName; }
-    public void setPatientName(String patientName) { this.patientName = patientName; }
-
-    public LocalDate getDateOfRecord() { return dateOfRecord; }
-    public void setDateOfRecord(LocalDate dateOfRecord) { this.dateOfRecord = dateOfRecord; }
-
-    public String getDiagnosis() { return diagnosis; }
-    public void setDiagnosis(String diagnosis) { this.diagnosis = diagnosis; }
-
-    public String getTreatment() { return treatment; }
-    public void setTreatment(String treatment) { this.treatment = treatment; }
-
-    public String getNotes() { return notes; }
-    public void setNotes(String notes) { this.notes = notes; }
+    
 }
