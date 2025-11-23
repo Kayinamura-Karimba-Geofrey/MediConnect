@@ -17,6 +17,7 @@ public class MedicalHistoryCreateDTO {
     private String diagnosis;
 
     private String treatment;
+    
     private String notes;
 
     
