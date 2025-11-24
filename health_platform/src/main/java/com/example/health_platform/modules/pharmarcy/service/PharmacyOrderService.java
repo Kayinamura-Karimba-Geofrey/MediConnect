@@ -15,5 +15,5 @@ public interface PharmacyOrderService {
 
     List<PharmacyOrderResponseDTO> getAllOrders();
 
-    PharmacyOrderResponseDTO updateStatus(Long orderId, OrderStatus status); // <-- ADD THIS
+    PharmacyOrderResponseDTO updateStatus(Long orderId, OrderStatus status); 
 }

@@ -5,8 +5,10 @@ import com.example.health_platform.modules.doctor.model.Prescription1;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
+import lombok.Data;
 
 @Entity
+@Data
 public class PharmacyOrder {
 
     @Id
@@ -30,21 +32,5 @@ public class PharmacyOrder {
     private LocalDateTime createdAt = LocalDateTime.now();
 
     
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-
-    public User getPatient() { return patient; }
-    public void setPatient(User patient) { this.patient = patient; }
-
-    public Prescription1 getPrescription() { return prescription; }
-    public void setPrescription(Prescription1 prescription) { this.prescription = prescription; }
-
-    public List<String> getMedicines() { return medicines; }
-    public void setMedicines(List<String> medicines) { this.medicines = medicines; }
-
-    public OrderStatus getStatus() { return status; }
-    public void setStatus(OrderStatus status) { this.status = status; }
-
-    public LocalDateTime getCreatedAt() { return createdAt; }
-    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+    
 }

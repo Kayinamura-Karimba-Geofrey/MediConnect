@@ -8,5 +8,5 @@ public class PharmacyOrderResponseDTO {
     private Long id;
     private Long prescriptionId;
     private String status;
-    private List<String> medicines; // <-- ADD THIS FIELD
+    private List<String> medicines; 
 }
