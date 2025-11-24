@@ -12,7 +12,5 @@ public class PrescriptionResponseDTO {
     private List<String> medicines;
     private String notes;
     private boolean dispensed;
-
-    
     
 }
