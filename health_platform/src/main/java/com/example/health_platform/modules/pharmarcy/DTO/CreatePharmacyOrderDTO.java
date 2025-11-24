@@ -8,8 +8,6 @@ public class CreatePharmacyOrderDTO {
     private Long prescriptionId;
     private List<String> medicines; 
 
-    
-
     public List<String> getMedicines() {   
         return medicines;
     }
