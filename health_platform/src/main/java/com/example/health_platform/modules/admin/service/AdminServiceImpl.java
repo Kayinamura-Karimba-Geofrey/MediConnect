@@ -29,14 +29,13 @@ public class AdminServiceImpl implements AdminService {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
-        user.setSuspended(true);
+        user.setSuspended(true); // make sure User has this setter
 
         return userRepository.save(user);
     }
 
     @Override
     public AdminStatsDTO getPlatformStats() {
-
         long totalUsers = userRepository.count();
         long totalDoctors = userRepository.countByRole(Role.DOCTORS);
         long totalPatients = userRepository.countByRole(Role.PATIENTS);

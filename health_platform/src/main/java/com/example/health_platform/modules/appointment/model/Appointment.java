@@ -25,6 +25,7 @@ public class Appointment {
     private LocalDateTime appointmentDate;
 
     private String reason;
+    private String description;
 
     private String status; 
 
