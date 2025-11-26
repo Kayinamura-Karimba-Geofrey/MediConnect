@@ -33,7 +33,7 @@ class AdminControllerTest {
     @MockBean
     private AdminService adminService;
 
-    // GET /admin/users
+    
     @Test
     @WithMockUser(roles = "ADMIN")
     @DisplayName("GET /admin/users -> returns list of users")
@@ -52,7 +52,7 @@ class AdminControllerTest {
                 .andExpect(jsonPath("$[0].active").value(true));
     }
 
-    // PATCH /admin/suspend/{id}
+    
     @Test
     @WithMockUser(roles = "ADMIN")
     @DisplayName("PATCH /admin/suspend/{id} -> suspends user")
@@ -70,7 +70,7 @@ class AdminControllerTest {
                 .andExpect(jsonPath("$.suspended").value(true));
     }
 
-    // GET /admin/stats
+    
     @Test
     @WithMockUser(roles = "ADMIN")
     @DisplayName("GET /admin/stats -> returns admin statistics")
@@ -88,7 +88,7 @@ class AdminControllerTest {
                 .andExpect(jsonPath("$.totalDoctors").value(3));
     }
 
-    // GET /admin/appointments
+    
     @Test
     @WithMockUser(roles = "ADMIN")
     @DisplayName("GET /admin/appointments -> returns appointments list")
@@ -106,7 +106,7 @@ class AdminControllerTest {
                 .andExpect(jsonPath("$[0].description").value("Appointment1"));
     }
 
-    // PATCH /admin/doctor/approve/{id}
+    
     @Test
     @WithMockUser(roles = "ADMIN")
     @DisplayName("PATCH /admin/doctor/approve/{id} -> approves doctor")
@@ -124,7 +124,7 @@ class AdminControllerTest {
                 .andExpect(jsonPath("$.approved").value(true));
     }
 
-    // Unauthorized access test
+    
     @Test
     @DisplayName("Unauthorized user -> forbidden access to /admin endpoints")
     void nonAdmin_shouldBeForbidden() throws Exception {
