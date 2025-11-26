@@ -39,7 +39,7 @@ class AppointmentControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
 
-    // ---------- POST /appointments ----------
+    
     @Test
     @WithMockUser(roles = "PATIENT")
     @DisplayName("POST /appointments -> create new appointment")
@@ -71,7 +71,7 @@ class AppointmentControllerTest {
                 .andExpect(jsonPath("$.doctor.id").value(2));
     }
 
-    // ---------- GET /appointments/patient ----------
+    
     @Test
     @WithMockUser(roles = "PATIENT")
     @DisplayName("GET /appointments/patient -> list patient appointments")
@@ -93,7 +93,7 @@ class AppointmentControllerTest {
                 .andExpect(jsonPath("$[0].patient.id").value(1));
     }
 
-    // ---------- GET /appointments/doctor ----------
+
     @Test
     @WithMockUser(roles = "DOCTOR")
     @DisplayName("GET /appointments/doctor -> list doctor appointments")
@@ -115,7 +115,7 @@ class AppointmentControllerTest {
                 .andExpect(jsonPath("$[0].doctor.id").value(2));
     }
 
-    // ---------- PATCH /appointments/{id} ----------
+    
     @Test
     @WithMockUser(roles = "PATIENT")
     @DisplayName("PATCH /appointments/{id} -> update appointment")
@@ -137,7 +137,7 @@ class AppointmentControllerTest {
                 .andExpect(jsonPath("$.date").value(newDate.toString()));
     }
 
-    // ---------- DELETE /appointments/{id} ----------
+    
     @Test
     @WithMockUser(roles = "PATIENT")
     @DisplayName("DELETE /appointments/{id} -> delete appointment")
@@ -149,7 +149,7 @@ class AppointmentControllerTest {
                 .andExpect(status().isOk());
     }
 
-    // ---------- PATCH /appointments/cancel/{id} ----------
+    
     @Test
     @WithMockUser(roles = "PATIENT")
     @DisplayName("PATCH /appointments/cancel/{id} -> cancel appointment")
@@ -171,7 +171,7 @@ class AppointmentControllerTest {
                 .andExpect(jsonPath("$.patient.id").value(1));
     }
 
-    // ---------- PATCH /appointments/approve/{id} ----------
+    
     @Test
     @WithMockUser(roles = "DOCTOR")
     @DisplayName("PATCH /appointments/approve/{id} -> approve appointment")
@@ -193,7 +193,7 @@ class AppointmentControllerTest {
                 .andExpect(jsonPath("$.doctor.id").value(2));
     }
 
-    // ---------- Unauthorized access ----------
+    
     @Test
     @DisplayName("Unauthorized user -> forbidden access to /appointments endpoints")
     void nonAuthorized_shouldBeForbidden() throws Exception {

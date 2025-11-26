@@ -14,5 +14,7 @@ public class CreatePrescriptionDTO {
     private List<String> medicines;
 
     private String notes;
+
+    
      
 }
