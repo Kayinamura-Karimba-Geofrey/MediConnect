@@ -22,7 +22,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.List;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyLong;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -38,7 +38,7 @@ class PrescriptionControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
 
-    // ---------- POST /doctor/prescriptions ----------
+    
     @Test
     @WithMockUser(roles = "DOCTOR")
     @DisplayName("POST /doctor/prescriptions -> create prescription")
@@ -49,13 +49,13 @@ class PrescriptionControllerTest {
 
         CreatePrescriptionDTO requestDTO = new CreatePrescriptionDTO();
         requestDTO.setPatientId(2L);
-        requestDTO.setMedicines("Paracetamol 500mg");
+        requestDTO.setMedicines(List.of("Paracetamol 500mg"));
 
         PrescriptionResponseDTO responseDTO = new PrescriptionResponseDTO();
         responseDTO.setId(100L);
         responseDTO.setDoctorId(1L);
         responseDTO.setPatientId(2L);
-        responseDTO.setMedicines("Paracetamol 500mg");
+        responseDTO.setMedicines(List.of("Paracetamol 500mg"));
 
         Mockito.when(prescriptionService.createPrescription(any(User.class), any(CreatePrescriptionDTO.class)))
                .thenReturn(responseDTO);
@@ -102,7 +102,7 @@ class PrescriptionControllerTest {
         PrescriptionResponseDTO responseDTO = new PrescriptionResponseDTO();
         responseDTO.setId(102L);
         responseDTO.setPatientId(2L);
-         responseDTO.setMedicines("Amoxicillin 500mg");
+         responseDTO.setMedicines(List.of("Amoxicillin 500mg"));
 
         Mockito.when(prescriptionService.getPrescriptionsByPatient(2L))
                .thenReturn(List.of(responseDTO));
@@ -122,7 +122,7 @@ class PrescriptionControllerTest {
 
         PrescriptionResponseDTO responseDTO = new PrescriptionResponseDTO();
         responseDTO.setId(103L);
-         responseDTO.setMedicines("Ibuprofen 200mg");
+         responseDTO.setMedicines(List.of("Ibuprofen 200mg"));
         responseDTO.setDispensed(true);
 
         Mockito.when(prescriptionService.markAsDispensed(103L))
