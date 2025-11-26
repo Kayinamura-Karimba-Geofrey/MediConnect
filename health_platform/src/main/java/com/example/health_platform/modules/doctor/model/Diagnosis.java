@@ -24,6 +24,7 @@ public class Diagnosis {
     private Visit visit;
     private String diagnosisText;
     private String treatment;
+    private String notes;
 
     private LocalDateTime createdAt = LocalDateTime.now();
 

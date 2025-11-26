@@ -37,7 +37,7 @@ class DiagnosisControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
 
-    // ---------- POST /doctor/diagnosis ----------
+    
     @Test
     @WithMockUser(roles = "DOCTOR")
     @DisplayName("POST /doctor/diagnosis -> create a new diagnosis")
@@ -64,7 +64,7 @@ class DiagnosisControllerTest {
                 .andExpect(jsonPath("$.notes").value("Patient has fever"));
     }
 
-    // ---------- GET /doctor/diagnosis/{visitId} ----------
+    
     @Test
     @WithMockUser(roles = "DOCTOR")
     @DisplayName("GET /doctor/diagnosis/{visitId} -> returns diagnosis list")
@@ -85,7 +85,7 @@ class DiagnosisControllerTest {
                 .andExpect(jsonPath("$[0].notes").value("Patient has fever"));
     }
 
-    // ---------- Unauthorized access ----------
+    
     @Test
     @DisplayName("Unauthorized user -> forbidden access to /doctor endpoints")
     void nonDoctor_shouldBeForbidden() throws Exception {

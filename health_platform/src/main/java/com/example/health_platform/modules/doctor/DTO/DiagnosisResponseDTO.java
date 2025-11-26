@@ -9,6 +9,7 @@ public class DiagnosisResponseDTO {
     private Long visitId;
     private String diagnosisText;
     private String treatment;
+    private String notes;
 
     
 }

@@ -15,5 +15,7 @@ public class DiagnosisRequestDTO {
     @NotBlank
     private String treatment;
 
+    private String notes;
+
     
 }
