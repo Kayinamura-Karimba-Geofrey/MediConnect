@@ -28,6 +28,7 @@ public class Appointment {
     private String description;
 
     private String status; 
+    private LocalDateTime date;
 
     
 }
