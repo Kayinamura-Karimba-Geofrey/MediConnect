@@ -53,7 +53,7 @@ class AuthControllerTest {
         returned.setId(1L);
         returned.setEmail(req.getEmail());
         returned.setFullName(req.getFullName());
-        returned.setRole(null); // role enum may be present in your User entity; adjust if needed
+        returned.setRole(null); 
 
         when(authService.register(any(RegisterRequest.class))).thenReturn(returned);
 
@@ -132,7 +132,7 @@ class AuthControllerTest {
         dto.setFullName("Me Myself");
         dto.setRole(Role.PATIENTS);
 
-        // Mock service to accept any HttpServletRequest
+        
         when(authService.getCurrentUserDto(any(HttpServletRequest.class))).thenReturn(dto);
 
         mockMvc.perform(get("/auth/me")
