@@ -41,7 +41,7 @@ class UserControllerTest {
     @MockBean
     private UserService userService;
 
-    // Helper: create fake user
+    
     private User fakeUser() {
         User u = new User();
         u.setId(1L);
@@ -50,9 +50,6 @@ class UserControllerTest {
         return u;
     }
 
-    // ---------------------------------------------------------
-    // TEST: PATCH /user/update-profile
-    // ---------------------------------------------------------
     @Test
     @DisplayName("PATCH /user/update-profile → updates profile")
     void updateProfile_shouldUpdateProfile() throws Exception {
@@ -75,9 +72,6 @@ class UserControllerTest {
     }
 
 
-    // ---------------------------------------------------------
-    // TEST: POST /user/{id}/upload-photo
-    // ---------------------------------------------------------
     @Test
     @DisplayName("POST /user/{id}/upload-photo → uploads user photo")
     void uploadPhoto_shouldUpload() throws Exception {
@@ -99,9 +93,6 @@ class UserControllerTest {
     }
 
 
-    // ---------------------------------------------------------
-    // TEST: GET /user/{id}
-    // ---------------------------------------------------------
     @Test
     @DisplayName("GET /user/{id} → returns user profile")
     void getUserById_shouldReturnUser() throws Exception {
