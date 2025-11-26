@@ -53,5 +53,6 @@ public class User {
 
     private boolean suspended = false;     
     private boolean doctorApproved = false; 
+    private boolean active = true;
 
 }

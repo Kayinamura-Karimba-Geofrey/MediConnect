@@ -9,4 +9,7 @@ public class AdminStatsDTO {
     private long totalPatients;
     private long totalAppointments;
     private long approvedDoctors;
+    private int activeDoctors;
+    private int activePatients;
+    
 }

@@ -1,7 +1,6 @@
 package com.example.health_platform;
+
 import com.example.health_platform.modules.admin.controller.AdminController;
-
-
 import com.example.health_platform.auth.model.User;
 import com.example.health_platform.modules.admin.DTO.AdminStatsDTO;
 import com.example.health_platform.modules.admin.service.AdminService;
@@ -25,7 +24,6 @@ import static org.mockito.ArgumentMatchers.anyLong;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-
 @WebMvcTest(AdminController.class)
 class AdminControllerTest {
 
@@ -43,13 +41,15 @@ class AdminControllerTest {
         User u = new User();
         u.setId(1L);
         u.setEmail("john@example.com");
+        u.setActive(true); // Ensure active field exists
 
         Mockito.when(adminService.getAllUsers()).thenReturn(List.of(u));
 
         mockMvc.perform(get("/admin/users"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].id").value(1))
-                .andExpect(jsonPath("$[0].email").value("john@example.com"));
+                .andExpect(jsonPath("$[0].email").value("john@example.com"))
+                .andExpect(jsonPath("$[0].active").value(true));
     }
 
     // ---------- PATCH /admin/suspend/{id} ----------
@@ -60,7 +60,7 @@ class AdminControllerTest {
 
         User suspended = new User();
         suspended.setId(5L);
-        suspended.setActive(false);
+        suspended.setActive(false); // Ensure this setter exists
 
         Mockito.when(adminService.suspendUser(anyLong())).thenReturn(suspended);
 
@@ -78,7 +78,7 @@ class AdminControllerTest {
 
         AdminStatsDTO stats = new AdminStatsDTO();
         stats.setTotalUsers(10);
-        stats.setActiveDoctors(3);
+        stats.setActiveDoctors(3); // Ensure setter exists
 
         Mockito.when(adminService.getPlatformStats()).thenReturn(stats);
 
@@ -109,7 +109,7 @@ class AdminControllerTest {
 
         User doctor = new User();
         doctor.setId(7L);
-        doctor.setApproved(true);
+        doctor.setApproved(true); // Ensure this setter exists
 
         Mockito.when(adminService.approveDoctor(anyLong())).thenReturn(doctor);
 
