@@ -4,12 +4,14 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
 @Entity
 @Data   
 @AllArgsConstructor
+@NoArgsConstructor
  
 @Table(name = "medical_histories")
 public class MedicalHistory {
@@ -34,16 +36,7 @@ public class MedicalHistory {
     private String notes;
 
     
-    public MedicalHistory() {
-    }
-
-    public MedicalHistory(String patientName, LocalDate dateOfRecord, String diagnosis, String treatment, String notes) {
-        this.patientName = patientName;
-        this.dateOfRecord = dateOfRecord;
-        this.diagnosis = diagnosis;
-        this.treatment = treatment;
-        this.notes = notes;
-    }
+    
 
     
 }
