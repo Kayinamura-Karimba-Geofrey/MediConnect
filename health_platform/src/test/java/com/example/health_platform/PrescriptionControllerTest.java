@@ -70,7 +70,6 @@ class PrescriptionControllerTest {
                 .andExpect(jsonPath("$.medication").value("Paracetamol 500mg"));
     }
 
-    // ---------- GET /doctor/prescriptions/{id} ----------
     @Test
     @WithMockUser(roles = "DOCTOR")
     @DisplayName("GET /doctor/prescriptions/{id} -> get prescription by ID")
@@ -80,7 +79,7 @@ class PrescriptionControllerTest {
         responseDTO.setId(101L);
         responseDTO.setDoctorId(1L);
         responseDTO.setPatientId(2L);
-        // responseDTO.setMedication("Ibuprofen 200mg");
+        responseDTO.setMedicines(List.of("Ibuprofen 200mg"));
 
         Mockito.when(prescriptionService.getPrescriptionById(101L))
                .thenReturn(responseDTO);
@@ -93,7 +92,7 @@ class PrescriptionControllerTest {
                 .andExpect(jsonPath("$.medication").value("Ibuprofen 200mg"));
     }
 
-    // ---------- GET /doctor/prescriptions/patient/{patientId} ----------
+    
     @Test
     @WithMockUser(roles = "DOCTOR")
     @DisplayName("GET /doctor/prescriptions/patient/{patientId} -> get all prescriptions for patient")
@@ -114,7 +113,7 @@ class PrescriptionControllerTest {
                 .andExpect(jsonPath("$[0].medication").value("Amoxicillin 500mg"));
     }
 
-    // ---------- PATCH /doctor/prescriptions/dispense/{id} ----------
+    
     @Test
     @WithMockUser(roles = "DOCTOR")
     @DisplayName("PATCH /doctor/prescriptions/dispense/{id} -> mark as dispensed")
@@ -134,7 +133,7 @@ class PrescriptionControllerTest {
                 .andExpect(jsonPath("$.dispensed").value(true));
     }
 
-    // ---------- Unauthorized access ----------
+    
     @Test
     @DisplayName("Unauthorized user -> forbidden access")
     void nonAuthorized_shouldBeForbidden() throws Exception {
