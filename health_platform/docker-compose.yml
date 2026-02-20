@@ -1,0 +1,13 @@
+services:
+  health-platform-api:
+    build: .
+    container_name: health-platform-api
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_URL=${DB_URL:-jdbc:postgresql://ep-small-hill-ah1ckuv3-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require&channelBinding=require}
+      - DB_USERNAME=${DB_USERNAME:-neondb_owner}
+      - DB_PASSWORD=${DB_PASSWORD:-npg_p2qBg8NZAXkK}
+      - JWT_SECRET=${JWT_SECRET:-+0reiNFFeNco77KU8X1tbQujO2M9ehzU+3ROJ4oT}
+      - JWT_REFRESH_SECRET=${JWT_REFRESH_SECRET:-dGhpcy1pcy1teS1zZWNyZXQta2V5LXdoaWNoLWlzLXZlcnktbG9uZw==}
+    restart: unless-stopped
