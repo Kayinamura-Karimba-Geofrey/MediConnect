@@ -7,6 +7,9 @@ import lombok.Data;
 public class DiagnosisRequestDTO {
 
     @NotNull
+    private Long doctorId;
+
+    @NotNull
     private Long visitId;
 
     @NotBlank

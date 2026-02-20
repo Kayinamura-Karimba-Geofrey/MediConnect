@@ -1,4 +1,7 @@
 package com.example.health_platform.auth.security;
+ 
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import java.util.Collections;
 
 import com.example.health_platform.auth.model.User;
 import com.example.health_platform.auth.repository.UserRepository;
@@ -45,7 +48,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
             if (user != null && jwtService.validateAccessToken(token)) {
                 UsernamePasswordAuthenticationToken authToken =
-                        new UsernamePasswordAuthenticationToken(user, null, null);
+                        new UsernamePasswordAuthenticationToken(user, null, 
+                        Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + user.getRole().name())));
                 authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(authToken);
 

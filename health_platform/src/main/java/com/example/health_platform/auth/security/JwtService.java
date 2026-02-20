@@ -1,6 +1,7 @@
 package com.example.health_platform.auth.security;
 
 import com.example.health_platform.auth.model.Role;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
@@ -14,12 +15,20 @@ import java.util.Date;
 @Service
 public class JwtService {
 
-    
-    private final String ACCESS_SECRET_STRING = "ACCESS_SECRET_KEY_123456789012345678901234"; 
-    private final String REFRESH_SECRET_STRING = "REFRESH_SECRET_KEY_4567890123456789012345";
+    @Value("${application.security.jwt.secret-key}")
+    private String ACCESS_SECRET_STRING;
 
-    private final Key ACCESS_SECRET = Keys.hmacShaKeyFor(ACCESS_SECRET_STRING.getBytes());
-    private final Key REFRESH_SECRET = Keys.hmacShaKeyFor(REFRESH_SECRET_STRING.getBytes());
+    @Value("${application.security.jwt.refresh-token.secret-key}")
+    private String REFRESH_SECRET_STRING;
+
+
+    private Key getAccessKey() {
+        return Keys.hmacShaKeyFor(ACCESS_SECRET_STRING.getBytes());
+    }
+
+    private Key getRefreshKey() {
+        return Keys.hmacShaKeyFor(REFRESH_SECRET_STRING.getBytes());
+    }
 
     
 
@@ -29,7 +38,7 @@ public class JwtService {
                 .setSubject(userId)
                 .claim("role", role.name())
                 .setExpiration(new Date(System.currentTimeMillis() + 15 * 60 * 1000)) // 15 mins
-                .signWith(ACCESS_SECRET, SignatureAlgorithm.HS256)
+                .signWith(getAccessKey(), SignatureAlgorithm.HS256)
                 .compact();
     }
 
@@ -38,7 +47,7 @@ public class JwtService {
         return Jwts.builder()
                 .setSubject(userId)
                 .setExpiration(new Date(System.currentTimeMillis() + 30L * 24 * 60 * 60 * 1000)) // 30 days
-                .signWith(REFRESH_SECRET, SignatureAlgorithm.HS256)
+                .signWith(getRefreshKey(), SignatureAlgorithm.HS256)
                 .compact();
     }
 
@@ -47,7 +56,7 @@ public class JwtService {
     public boolean validateAccessToken(String token) {
         try {
             Jwts.parserBuilder()
-                .setSigningKey(ACCESS_SECRET)
+                .setSigningKey(getAccessKey())
                 .build()
                 .parseClaimsJws(token);
             return true;
@@ -59,7 +68,7 @@ public class JwtService {
     public boolean validateRefreshToken(String token) {
         try {
             Jwts.parserBuilder()
-                .setSigningKey(REFRESH_SECRET)
+                .setSigningKey(getRefreshKey())
                 .build()
                 .parseClaimsJws(token);
             return true;
@@ -72,7 +81,7 @@ public class JwtService {
 
     public String extractUserIdFromAccessToken(String token) {
         Claims claims = Jwts.parserBuilder()
-                .setSigningKey(ACCESS_SECRET)
+                .setSigningKey(getAccessKey())
                 .build()
                 .parseClaimsJws(token)
                 .getBody();
@@ -81,7 +90,7 @@ public class JwtService {
 
     public String extractUserIdFromRefreshToken(String token) {
         Claims claims = Jwts.parserBuilder()
-                .setSigningKey(REFRESH_SECRET)
+                .setSigningKey(getRefreshKey())
                 .build()
                 .parseClaimsJws(token)
                 .getBody();
@@ -90,7 +99,7 @@ public class JwtService {
 
     public String extractRoleFromAccessToken(String token) {
         Claims claims = Jwts.parserBuilder()
-                .setSigningKey(ACCESS_SECRET)
+                .setSigningKey(getAccessKey())
                 .build()
                 .parseClaimsJws(token)
                 .getBody();
