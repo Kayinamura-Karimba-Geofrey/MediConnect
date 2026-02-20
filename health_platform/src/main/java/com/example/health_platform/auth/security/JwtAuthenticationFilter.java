@@ -37,9 +37,13 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
             token = authHeader.substring(7);
             try {
-                userId = Long.parseLong(jwtService.extractUserIdFromAccessToken(token));
+                String extractedId = jwtService.extractUserIdFromAccessToken(token);
+                if (extractedId != null) {
+                    userId = Long.parseLong(extractedId);
+                }
             } catch (Exception e) {
-                // invalid token
+                // invalid token or non-numeric ID
+                logger.error("Could not parse user ID from token", e);
             }
         }
 

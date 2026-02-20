@@ -9,7 +9,11 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<ApiResponse<Object>> handleRuntime(RuntimeException ex) {
-        ApiResponse<Object> r = new ApiResponse<>(false, null, ex.getMessage());
+        // Log the exception details on the server (using stdout for now, could use a logger)
+        System.err.println("Runtime Exception: " + ex.getMessage());
+        ex.printStackTrace();
+        
+        ApiResponse<Object> r = new ApiResponse<>(false, null, "An internal error occurred. Please try again later.");
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(r);
     }
 
