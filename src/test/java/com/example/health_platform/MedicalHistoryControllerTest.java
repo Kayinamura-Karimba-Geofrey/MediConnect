@@ -1,5 +1,9 @@
 package com.example.health_platform;
 
+import com.example.health_platform.auth.repository.UserRepository;
+import com.example.health_platform.auth.security.CustomUserDetailsService;
+import com.example.health_platform.auth.security.JwtService;
+import com.example.health_platform.auth.security.SecurityConfig;
 import com.example.health_platform.modules.medicalHistory.model.MedicalHistory;
 import com.example.health_platform.modules.medicalHistory.service.MedicalHistoryService;
 import com.example.health_platform.modules.medicalHistory.controller.MedicalHistoryController;
@@ -10,7 +14,9 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDate;
@@ -23,6 +29,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(MedicalHistoryController.class)
+@Import(SecurityConfig.class)
+@WithMockUser
 class MedicalHistoryControllerTest {
 
     @Autowired
@@ -30,6 +38,15 @@ class MedicalHistoryControllerTest {
 
     @MockBean
     private MedicalHistoryService service;
+
+    @MockBean
+    private JwtService jwtService;
+
+    @MockBean
+    private UserRepository userRepository;
+
+    @MockBean
+    private CustomUserDetailsService customUserDetailsService;
 
     @Test
     @DisplayName("POST /medical-history → should save a record")
@@ -45,7 +62,7 @@ class MedicalHistoryControllerTest {
 
         Mockito.when(service.save(any(MedicalHistory.class))).thenReturn(history);
 
-        mockMvc.perform(post("/medical-history")
+        mockMvc.perform(post("/api/medical-history")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
                             {
@@ -74,7 +91,7 @@ class MedicalHistoryControllerTest {
 
         Mockito.when(service.getAll()).thenReturn(List.of(h1, h2));
 
-        mockMvc.perform(get("/medical-history"))
+        mockMvc.perform(get("/api/medical-history"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].patientName").value("John Doe"))
                 .andExpect(jsonPath("$[1].patientName").value("Jane Doe"));
@@ -92,7 +109,7 @@ class MedicalHistoryControllerTest {
 
         Mockito.when(service.getById(1L)).thenReturn(Optional.of(history));
 
-        mockMvc.perform(get("/medical-history/1"))
+        mockMvc.perform(get("/api/medical-history/1"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.patientName").value("John Doe"));
     }
@@ -103,7 +120,7 @@ class MedicalHistoryControllerTest {
 
         Mockito.when(service.getById(99L)).thenReturn(Optional.empty());
 
-        mockMvc.perform(get("/medical-history/99"))
+        mockMvc.perform(get("/api/medical-history/99"))
                 .andExpect(status().isNotFound());
     }
 
@@ -111,7 +128,7 @@ class MedicalHistoryControllerTest {
     @DisplayName("DELETE /medical-history/{id} → should delete record")
     void deleteMedicalHistory() throws Exception {
 
-        mockMvc.perform(delete("/medical-history/1"))
+        mockMvc.perform(delete("/api/medical-history/1"))
                 .andExpect(status().isNoContent());
     }
 
@@ -128,7 +145,7 @@ class MedicalHistoryControllerTest {
         Mockito.when(service.getByPatientName("John Doe"))
                 .thenReturn(List.of(record));
 
-        mockMvc.perform(get("/medical-history/patient/John Doe"))
+        mockMvc.perform(get("/api/medical-history/patient/John Doe"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].patientName").value("John Doe"))
                 .andExpect(jsonPath("$[0].diagnosis").value("Infection"));

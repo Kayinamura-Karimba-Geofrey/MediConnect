@@ -1,8 +1,13 @@
 package com.example.health_platform;
 
+import com.example.health_platform.auth.repository.UserRepository;
+import com.example.health_platform.auth.security.CustomUserDetailsService;
+import com.example.health_platform.auth.security.JwtService;
+import com.example.health_platform.auth.security.SecurityConfig;
 import com.example.health_platform.modules.Analytics.controller.AnalyticsController;
-import com.example.health_platform.modules.Analytics.DTO.PlatformStatsDTO;
 import com.example.health_platform.modules.Analytics.service.AnalyticsService;
+import com.example.health_platform.modules.admin.DTO.AdminStatsDTO;
+import com.example.health_platform.modules.admin.service.AdminService;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -11,7 +16,9 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Import;
 // import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.List;
@@ -22,6 +29,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(AnalyticsController.class)
+@Import(SecurityConfig.class)
+@WithMockUser
 class AnalyticsControllerTest {
 
     @Autowired
@@ -30,16 +39,28 @@ class AnalyticsControllerTest {
     @MockBean
     private AnalyticsService analyticsService;
 
+    @MockBean
+    private AdminService adminService;
+
+    @MockBean
+    private JwtService jwtService;
+
+    @MockBean
+    private UserRepository userRepository;
+
+    @MockBean
+    private CustomUserDetailsService customUserDetailsService;
+
     @Test
     @DisplayName("GET /analytics/stats -> returns platform stats")
     void getPlatformStats_shouldReturnStats() throws Exception {
-        PlatformStatsDTO dto = new PlatformStatsDTO();
+        AdminStatsDTO dto = new AdminStatsDTO();
         dto.setTotalUsers(100L);
         dto.setTotalDoctors(20L);
         dto.setTotalPatients(80L);
         dto.setTotalAppointments(150L);
 
-        Mockito.when(analyticsService.getPlatformStats()).thenReturn(dto);
+        Mockito.when(adminService.getPlatformStats()).thenReturn(dto);
 
         mockMvc.perform(get("/analytics/stats"))
                 .andExpect(status().isOk())

@@ -4,6 +4,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 
 import com.example.health_platform.auth.model.User;
+import com.example.health_platform.auth.repository.UserRepository;
+import com.example.health_platform.auth.security.CustomUserDetailsService;
+import com.example.health_platform.auth.security.JwtService;
+import com.example.health_platform.auth.security.SecurityConfig;
 import com.example.health_platform.modules.user.dto.UpdateProfileRequest;
 import com.example.health_platform.modules.user.service.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -16,9 +20,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Import;
 
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockMultipartFile;
+import org.springframework.security.test.context.support.WithMockUser;
 
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -30,6 +36,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(UserController.class)
+@Import(SecurityConfig.class)
+@WithMockUser
 class UserControllerTest {
 
     @Autowired
@@ -40,6 +48,15 @@ class UserControllerTest {
 
     @MockBean
     private UserService userService;
+
+    @MockBean
+    private JwtService jwtService;
+
+    @MockBean
+    private UserRepository userRepository;
+
+    @MockBean
+    private CustomUserDetailsService customUserDetailsService;
 
     
     private User fakeUser() {
@@ -89,7 +106,7 @@ class UserControllerTest {
         mockMvc.perform(multipart("/user/1/upload-photo")
                         .file(file))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.profilePhoto").value("avatar.jpg"));
+                .andExpect(jsonPath("$.profilePhoto").value("ZmFrZWltYWdl"));
     }
 
 

@@ -2,6 +2,10 @@ package com.example.health_platform;
 
 import com.example.health_platform.modules.admin.controller.AdminController;
 import com.example.health_platform.auth.model.User;
+import com.example.health_platform.auth.repository.UserRepository;
+import com.example.health_platform.auth.security.CustomUserDetailsService;
+import com.example.health_platform.auth.security.JwtService;
+import com.example.health_platform.auth.security.SecurityConfig;
 import com.example.health_platform.modules.admin.DTO.AdminStatsDTO;
 import com.example.health_platform.modules.admin.service.AdminService;
 import com.example.health_platform.modules.appointment.model.Appointment;
@@ -13,6 +17,7 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Import;
 
 import org.springframework.security.test.context.support.WithMockUser;
 
@@ -25,6 +30,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(AdminController.class)
+@Import(SecurityConfig.class)
 class AdminControllerTest {
 
     @Autowired
@@ -32,6 +38,15 @@ class AdminControllerTest {
 
     @MockBean
     private AdminService adminService;
+
+    @MockBean
+    private JwtService jwtService;
+
+    @MockBean
+    private UserRepository userRepository;
+
+    @MockBean
+    private CustomUserDetailsService customUserDetailsService;
 
     
     @Test

@@ -1,5 +1,10 @@
 package com.example.health_platform;
 
+import com.example.health_platform.auth.repository.UserRepository;
+import com.example.health_platform.auth.security.CustomUserDetailsService;
+import com.example.health_platform.auth.security.JwtService;
+import com.example.health_platform.auth.security.SecurityConfig;
+import com.example.health_platform.modules.doctor.controller.DoctorDiagnosisController;
 import com.example.health_platform.modules.doctor.DTO.DiagnosisRequestDTO;
 import com.example.health_platform.modules.doctor.DTO.DiagnosisResponseDTO;
 import com.example.health_platform.modules.doctor.service.DiagnosisService;
@@ -11,6 +16,7 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Import;
 
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
@@ -25,7 +31,8 @@ import static org.mockito.ArgumentMatchers.anyLong;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@WebMvcTest
+@WebMvcTest(controllers = DoctorDiagnosisController.class)
+@Import(SecurityConfig.class)
 class DiagnosisControllerTest {
 
     @Autowired
@@ -33,6 +40,15 @@ class DiagnosisControllerTest {
 
     @MockBean
     private DiagnosisService diagnosisService;
+
+    @MockBean
+    private JwtService jwtService;
+
+    @MockBean
+    private UserRepository userRepository;
+
+    @MockBean
+    private CustomUserDetailsService customUserDetailsService;
 
     @Autowired
     private ObjectMapper objectMapper;
@@ -55,7 +71,7 @@ class DiagnosisControllerTest {
         Mockito.when(diagnosisService.createDiagnosis(any(DiagnosisRequestDTO.class)))
                .thenReturn(responseDTO);
 
-        mockMvc.perform(post("/doctor/diagnosis")
+        mockMvc.perform(post("/doctor/diagnosis/create")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(requestDTO)))
                 .andExpect(status().isOk())
@@ -78,7 +94,7 @@ class DiagnosisControllerTest {
         Mockito.when(diagnosisService.getDiagnosisByVisit(anyLong()))
                .thenReturn(List.of(responseDTO));
 
-        mockMvc.perform(get("/doctor/diagnosis/1"))
+        mockMvc.perform(get("/doctor/diagnosis/visit/1"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].id").value(100))
                 .andExpect(jsonPath("$[0].visitId").value(1))
@@ -89,7 +105,7 @@ class DiagnosisControllerTest {
     @Test
     @DisplayName("Unauthorized user -> forbidden access to /doctor endpoints")
     void nonDoctor_shouldBeForbidden() throws Exception {
-        mockMvc.perform(get("/doctor/diagnosis/1"))
+        mockMvc.perform(get("/doctor/diagnosis/visit/1"))
                 .andExpect(status().isForbidden());
     }
 }
