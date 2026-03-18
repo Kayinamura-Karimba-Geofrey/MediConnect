@@ -1,4 +1,4 @@
-package com.example.health_platform.modules.pharmarcy.model;
+package com.example.health_platform.modules.pharmacy.model;
 
 import com.example.health_platform.auth.model.User;
 import com.example.health_platform.modules.doctor.model.Prescription1;

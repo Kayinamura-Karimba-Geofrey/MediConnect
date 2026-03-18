@@ -1,4 +1,4 @@
-package com.example.health_platform.modules.pharmarcy.DTO;
+package com.example.health_platform.modules.pharmacy.dto;
 
 import java.util.List;
 import lombok.Data;

@@ -1,8 +1,8 @@
 package com.example.health_platform.modules.visit.controller;
 
 import com.example.health_platform.auth.model.User;
-import com.example.health_platform.modules.visit.DTO.CreateVisitDTO;
-import com.example.health_platform.modules.visit.DTO.VisitResponseDTO;
+import com.example.health_platform.modules.visit.dto.CreateVisitDTO;
+import com.example.health_platform.modules.visit.dto.VisitResponseDTO;
 import com.example.health_platform.modules.visit.service.VisitService;
 import com.example.health_platform.auth.security.CurrentUser;
 import org.springframework.web.bind.annotation.*;

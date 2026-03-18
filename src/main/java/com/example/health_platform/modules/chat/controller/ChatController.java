@@ -1,9 +1,9 @@
 package com.example.health_platform.modules.chat.controller;
 
 import com.example.health_platform.auth.model.User;
-import com.example.health_platform.modules.chat.DTO.ChatConversationResponseDTO;
-import com.example.health_platform.modules.chat.DTO.ChatMessageResponseDTO;
-import com.example.health_platform.modules.chat.DTO.CreateMessageDTO;
+import com.example.health_platform.modules.chat.dto.ChatConversationResponseDTO;
+import com.example.health_platform.modules.chat.dto.ChatMessageResponseDTO;
+import com.example.health_platform.modules.chat.dto.CreateMessageDTO;
 import com.example.health_platform.modules.chat.service.ChatService;
 import com.example.health_platform.auth.repository.UserRepository;
 import org.springframework.web.bind.annotation.*;

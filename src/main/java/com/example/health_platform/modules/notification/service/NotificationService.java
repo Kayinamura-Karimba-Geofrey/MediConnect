@@ -1,7 +1,7 @@
 package com.example.health_platform.modules.notification.service;
 
 
-import com.example.health_platform.modules.notification.DTO.NotificationResponse;
+import com.example.health_platform.modules.notification.dto.NotificationResponse;
 import com.example.health_platform.modules.notification.model.Notification;
 import com.example.health_platform.modules.notification.repository.NotificationRepository;
 import com.example.health_platform.auth.model.User;

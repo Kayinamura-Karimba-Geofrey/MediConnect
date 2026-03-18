@@ -1,7 +1,7 @@
 package com.example.health_platform.modules.billing.service;
 
 import com.example.health_platform.auth.model.User;
-import com.example.health_platform.modules.billing.DTO.BillDTO;
+import com.example.health_platform.modules.billing.dto.BillDTO;
 import com.example.health_platform.modules.billing.model.Bill;
 import com.example.health_platform.modules.billing.model.BillStatus;
 import com.example.health_platform.modules.billing.repository.BillRepository;

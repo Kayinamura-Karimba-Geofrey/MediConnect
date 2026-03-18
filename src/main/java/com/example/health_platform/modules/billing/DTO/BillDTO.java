@@ -1,4 +1,4 @@
-package com.example.health_platform.modules.billing.DTO;
+package com.example.health_platform.modules.billing.dto;
 
 import com.example.health_platform.modules.billing.model.BillStatus;
 

@@ -2,7 +2,7 @@ package com.example.health_platform.modules.notification.controller;
 
 
 
-import com.example.health_platform.modules.notification.DTO.NotificationResponse;
+import com.example.health_platform.modules.notification.dto.NotificationResponse;
 import com.example.health_platform.modules.notification.service.NotificationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

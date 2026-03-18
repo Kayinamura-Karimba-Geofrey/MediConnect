@@ -2,8 +2,8 @@ package com.example.health_platform.modules.visit.service;
 
 import com.example.health_platform.auth.model.User;
 import com.example.health_platform.auth.repository.UserRepository;
-import com.example.health_platform.modules.visit.DTO.CreateVisitDTO;
-import com.example.health_platform.modules.visit.DTO.VisitResponseDTO;
+import com.example.health_platform.modules.visit.dto.CreateVisitDTO;
+import com.example.health_platform.modules.visit.dto.VisitResponseDTO;
 import com.example.health_platform.modules.visit.model.Visit;
 import com.example.health_platform.modules.visit.repository.VisitRepository;
 import org.springframework.stereotype.Service;

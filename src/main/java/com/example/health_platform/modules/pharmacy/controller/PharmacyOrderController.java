@@ -1,11 +1,11 @@
-package com.example.health_platform.modules.pharmarcy.controller;
+package com.example.health_platform.modules.pharmacy.controller;
 
 import com.example.health_platform.auth.model.User;
 import com.example.health_platform.auth.service.AuthService;
-import com.example.health_platform.modules.pharmarcy.DTO.CreatePharmacyOrderDTO;
-import com.example.health_platform.modules.pharmarcy.DTO.PharmacyOrderResponseDTO;
-import com.example.health_platform.modules.pharmarcy.model.OrderStatus;
-import com.example.health_platform.modules.pharmarcy.service.PharmacyOrderService;
+import com.example.health_platform.modules.pharmacy.dto.CreatePharmacyOrderDTO;
+import com.example.health_platform.modules.pharmacy.dto.PharmacyOrderResponseDTO;
+import com.example.health_platform.modules.pharmacy.model.OrderStatus;
+import com.example.health_platform.modules.pharmacy.service.PharmacyOrderService;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.ResponseEntity;

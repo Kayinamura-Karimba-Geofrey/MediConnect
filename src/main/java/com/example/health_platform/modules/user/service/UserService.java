@@ -2,7 +2,7 @@ package com.example.health_platform.modules.user.service;
 
 import com.example.health_platform.auth.model.User;
 import com.example.health_platform.modules.user.dto.UpdateProfileRequest;
-import com.example.health_platform.modules.user.repository.UserRepository2;
+import com.example.health_platform.auth.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -15,7 +15,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class UserService {
 
-    private final UserRepository2 userRepository;
+    private final UserRepository userRepository;
 
     
     public User updateProfile(UpdateProfileRequest request, HttpServletRequest httpRequest) {

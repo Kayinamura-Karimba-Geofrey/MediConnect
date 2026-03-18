@@ -1,4 +1,4 @@
-package com.example.health_platform.modules.notification.DTO;
+package com.example.health_platform.modules.notification.dto;
 
 
 

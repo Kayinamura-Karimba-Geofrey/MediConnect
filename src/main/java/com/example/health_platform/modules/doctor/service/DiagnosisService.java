@@ -1,7 +1,7 @@
 package com.example.health_platform.modules.doctor.service;
 
-import com.example.health_platform.modules.doctor.DTO.DiagnosisRequestDTO;
-import com.example.health_platform.modules.doctor.DTO.DiagnosisResponseDTO;
+import com.example.health_platform.modules.doctor.dto.DiagnosisRequestDTO;
+import com.example.health_platform.modules.doctor.dto.DiagnosisResponseDTO;
 
 import java.util.List;
 

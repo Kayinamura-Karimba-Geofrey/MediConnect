@@ -1,7 +1,7 @@
-package com.example.health_platform.modules.pharmarcy.repository;
+package com.example.health_platform.modules.pharmacy.repository;
 
 import com.example.health_platform.auth.model.User;
-import com.example.health_platform.modules.pharmarcy.model.PharmacyOrder;
+import com.example.health_platform.modules.pharmacy.model.PharmacyOrder;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

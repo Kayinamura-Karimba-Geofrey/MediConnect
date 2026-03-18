@@ -1,8 +1,8 @@
 package com.example.health_platform.modules.insurance.service;
 
 import com.example.health_platform.auth.model.User;
-import com.example.health_platform.modules.insurance.DTO.CreateInsuranceDTO;
-import com.example.health_platform.modules.insurance.DTO.InsuranceResponseDTO;
+import com.example.health_platform.modules.insurance.dto.CreateInsuranceDTO;
+import com.example.health_platform.modules.insurance.dto.InsuranceResponseDTO;
 import com.example.health_platform.modules.insurance.model.Insurance;
 import com.example.health_platform.modules.insurance.repository.InsuranceRepository;
 import org.springframework.stereotype.Service;

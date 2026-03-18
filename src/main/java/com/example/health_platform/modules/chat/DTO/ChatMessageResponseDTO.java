@@ -1,4 +1,4 @@
-package com.example.health_platform.modules.chat.DTO;
+package com.example.health_platform.modules.chat.dto;
 
 import lombok.Data;
 import java.time.LocalDateTime;

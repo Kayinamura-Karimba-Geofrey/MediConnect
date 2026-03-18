@@ -3,8 +3,8 @@ package com.example.health_platform.modules.emergency.service;
 
 
 import com.example.health_platform.auth.model.User;
-import com.example.health_platform.modules.emergency.DTO.EmergencyTokenResponseDTO;
-import com.example.health_platform.modules.emergency.DTO.EmergencyProfileDTO;
+import com.example.health_platform.modules.emergency.dto.EmergencyTokenResponseDTO;
+import com.example.health_platform.modules.emergency.dto.EmergencyProfileDTO;
 import com.example.health_platform.modules.emergency.model.EmergencyLog;
 import com.example.health_platform.modules.emergency.model.EmergencyToken;
 import com.example.health_platform.modules.emergency.repository.EmergencyLogRepository;

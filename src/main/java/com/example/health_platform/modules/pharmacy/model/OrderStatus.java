@@ -1,4 +1,4 @@
-package com.example.health_platform.modules.pharmarcy.model;
+package com.example.health_platform.modules.pharmacy.model;
 
 public enum OrderStatus {
     PENDING,
