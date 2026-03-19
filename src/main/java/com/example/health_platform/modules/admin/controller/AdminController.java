@@ -1,7 +1,7 @@
 package com.example.health_platform.modules.admin.controller;
 
 import com.example.health_platform.auth.model.User;
-import com.example.health_platform.modules.admin.DTO.AdminStatsDTO;
+import com.example.health_platform.modules.admin.dto.AdminStatsDTO;
 import com.example.health_platform.modules.admin.service.AdminService;
 
 import lombok.RequiredArgsConstructor;

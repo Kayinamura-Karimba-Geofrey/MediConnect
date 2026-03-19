@@ -1,7 +1,7 @@
 package com.example.health_platform.modules.file.service;
 
 import com.example.health_platform.auth.model.User;
-import com.example.health_platform.modules.file.DTO.FileUploadResponseDTO;
+import com.example.health_platform.modules.file.dto.FileUploadResponseDTO;
 import com.example.health_platform.modules.file.model.MedicalFile;
 import com.example.health_platform.modules.file.repository.FileRepository;
 import org.springframework.stereotype.Service;

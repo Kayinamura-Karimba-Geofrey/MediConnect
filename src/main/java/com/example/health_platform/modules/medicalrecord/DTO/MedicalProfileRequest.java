@@ -1,4 +1,4 @@
-package com.example.health_platform.modules.medicalrecord.DTO;
+package com.example.health_platform.modules.medicalrecord.dto;
 
 
 import lombok.Data;

@@ -1,8 +1,8 @@
 
-package com.example.health_platform.modules.medicalHistory.controller;
+package com.example.health_platform.modules.medicalhistory.controller;
 
-import com.example.health_platform.modules.medicalHistory.model.MedicalHistory;
-import com.example.health_platform.modules.medicalHistory.service.MedicalHistoryService;
+import com.example.health_platform.modules.medicalhistory.model.MedicalHistory;
+import com.example.health_platform.modules.medicalhistory.service.MedicalHistoryService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

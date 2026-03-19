@@ -2,8 +2,8 @@ package com.example.health_platform.modules.prescription.service;
 
 import com.example.health_platform.auth.model.User;
 import com.example.health_platform.auth.repository.UserRepository;
-import com.example.health_platform.modules.prescription.DTO.CreatePrescriptionDTO;
-import com.example.health_platform.modules.prescription.DTO.PrescriptionResponseDTO;
+import com.example.health_platform.modules.prescription.dto.CreatePrescriptionDTO;
+import com.example.health_platform.modules.prescription.dto.PrescriptionResponseDTO;
 import com.example.health_platform.modules.prescription.model.Prescription;
 import com.example.health_platform.modules.prescription.repository.PrescriptionRepository;
 import org.springframework.stereotype.Service;

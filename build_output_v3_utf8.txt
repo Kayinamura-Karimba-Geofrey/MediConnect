@@ -1,0 +1,24 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< com.example:health_platform >---------------------
+[INFO] Building health_platform 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ health_platform ---
+[INFO] Deleting C:\Users\HP\Downloads\health_platform\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ health_platform ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ health_platform ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 149 source files with javac [debug release 21] to target\classes
+[WARNING] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/doctor/mapper/DiagnosisMapper.java:[22,15] Unmapped target properties: "id, createdAt".
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  13.940 s
+[INFO] Finished at: 2026-03-19T22:31:40+02:00
+[INFO] ------------------------------------------------------------------------

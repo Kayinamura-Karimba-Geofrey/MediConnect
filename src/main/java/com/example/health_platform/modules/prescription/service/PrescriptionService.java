@@ -1,8 +1,8 @@
 package com.example.health_platform.modules.prescription.service;
 
 import com.example.health_platform.auth.model.User;
-import com.example.health_platform.modules.prescription.DTO.CreatePrescriptionDTO;
-import com.example.health_platform.modules.prescription.DTO.PrescriptionResponseDTO;
+import com.example.health_platform.modules.prescription.dto.CreatePrescriptionDTO;
+import com.example.health_platform.modules.prescription.dto.PrescriptionResponseDTO;
 
 import java.util.List;
 

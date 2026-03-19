@@ -1,0 +1,162 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< com.example:health_platform >---------------------
+[INFO] Building health_platform 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ health_platform ---
+[INFO] Deleting C:\Users\HP\Downloads\health_platform\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ health_platform ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ health_platform ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 149 source files with javac [debug release 21] to target\classes
+[INFO] -------------------------------------------------------------
+[WARNING] COMPILATION WARNING : 
+[INFO] -------------------------------------------------------------
+[WARNING] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/doctor/mapper/DiagnosisMapper.java:[22,15] Unmapped target properties: "id, createdAt".
+[INFO] 1 warning
+[INFO] -------------------------------------------------------------
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/repository/MedicalHistoryRepository.java:[2,64] cannot find symbol
+  symbol:   class medicalhistory
+  location: package com.example.health_platform.modules.medicalhistory.model
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/repository/MedicalHistoryRepository.java:[9,65] cannot find symbol
+  symbol: class MedicalHistory
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/repository/MedicalHistoryRepository.java:[10,10] cannot find symbol
+  symbol:   class MedicalHistory
+  location: interface com.example.health_platform.modules.medicalhistory.repository.MedicalHistoryRepository
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/dto/MedicalHistoryMapper.java:[2,64] cannot find symbol
+  symbol:   class medicalhistory
+  location: package com.example.health_platform.modules.medicalhistory.model
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/dto/MedicalHistoryMapper.java:[15,5] cannot find symbol
+  symbol:   class MedicalHistory
+  location: interface com.example.health_platform.modules.medicalhistory.dto.MedicalHistoryMapper
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/dto/MedicalHistoryMapper.java:[19,37] cannot find symbol
+  symbol:   class MedicalHistory
+  location: interface com.example.health_platform.modules.medicalhistory.dto.MedicalHistoryMapper
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/insurance/controller/InsuranceController.java:[14,19] cannot find symbol
+  symbol:   class InsuranceService
+  location: class com.example.health_platform.modules.insurance.controller.InsuranceController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/insurance/controller/InsuranceController.java:[16,32] cannot find symbol
+  symbol:   class InsuranceService
+  location: class com.example.health_platform.modules.insurance.controller.InsuranceController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/service/MedicalHistoryService.java:[3,64] cannot find symbol
+  symbol:   class medicalhistory
+  location: package com.example.health_platform.modules.medicalhistory.model
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/service/MedicalHistoryService.java:[20,32] cannot find symbol
+  symbol:   class MedicalHistory
+  location: class com.example.health_platform.modules.medicalhistory.service.MedicalHistoryService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/service/MedicalHistoryService.java:[20,12] cannot find symbol
+  symbol:   class MedicalHistory
+  location: class com.example.health_platform.modules.medicalhistory.service.MedicalHistoryService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/service/MedicalHistoryService.java:[24,17] cannot find symbol
+  symbol:   class MedicalHistory
+  location: class com.example.health_platform.modules.medicalhistory.service.MedicalHistoryService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/service/MedicalHistoryService.java:[28,21] cannot find symbol
+  symbol:   class MedicalHistory
+  location: class com.example.health_platform.modules.medicalhistory.service.MedicalHistoryService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/service/MedicalHistoryService.java:[36,17] cannot find symbol
+  symbol:   class MedicalHistory
+  location: class com.example.health_platform.modules.medicalhistory.service.MedicalHistoryService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/controller/MedicalHistoryController.java:[4,64] cannot find symbol
+  symbol:   class medicalhistory
+  location: package com.example.health_platform.modules.medicalhistory.model
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/controller/MedicalHistoryController.java:[23,70] cannot find symbol
+  symbol:   class MedicalHistory
+  location: class com.example.health_platform.modules.medicalhistory.controller.MedicalHistoryController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/controller/MedicalHistoryController.java:[23,27] cannot find symbol
+  symbol:   class MedicalHistory
+  location: class com.example.health_platform.modules.medicalhistory.controller.MedicalHistoryController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/controller/MedicalHistoryController.java:[28,32] cannot find symbol
+  symbol:   class MedicalHistory
+  location: class com.example.health_platform.modules.medicalhistory.controller.MedicalHistoryController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/controller/MedicalHistoryController.java:[33,27] cannot find symbol
+  symbol:   class MedicalHistory
+  location: class com.example.health_platform.modules.medicalhistory.controller.MedicalHistoryController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/controller/MedicalHistoryController.java:[46,32] cannot find symbol
+  symbol:   class MedicalHistory
+  location: class com.example.health_platform.modules.medicalhistory.controller.MedicalHistoryController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/dto/MedicalHistoryMapper.java:[9,8] No implementation was created for MedicalHistoryMapper due to having a problem in the erroneous element MedicalHistory. Hint: this often means that some other annotation processor was supposed to process the erroneous element. You can also enable MapStruct verbose mode by setting -Amapstruct.verbose=true as a compilation argument.
+[INFO] 21 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.941 s
+[INFO] Finished at: 2026-03-19T22:28:17+02:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project health_platform: Compilation failure: Compilation failure: 
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/repository/MedicalHistoryRepository.java:[2,64] cannot find symbol
+[ERROR]   symbol:   class medicalhistory
+[ERROR]   location: package com.example.health_platform.modules.medicalhistory.model
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/repository/MedicalHistoryRepository.java:[9,65] cannot find symbol
+[ERROR]   symbol: class MedicalHistory
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/repository/MedicalHistoryRepository.java:[10,10] cannot find symbol
+[ERROR]   symbol:   class MedicalHistory
+[ERROR]   location: interface com.example.health_platform.modules.medicalhistory.repository.MedicalHistoryRepository
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/dto/MedicalHistoryMapper.java:[2,64] cannot find symbol
+[ERROR]   symbol:   class medicalhistory
+[ERROR]   location: package com.example.health_platform.modules.medicalhistory.model
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/dto/MedicalHistoryMapper.java:[15,5] cannot find symbol
+[ERROR]   symbol:   class MedicalHistory
+[ERROR]   location: interface com.example.health_platform.modules.medicalhistory.dto.MedicalHistoryMapper
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/dto/MedicalHistoryMapper.java:[19,37] cannot find symbol
+[ERROR]   symbol:   class MedicalHistory
+[ERROR]   location: interface com.example.health_platform.modules.medicalhistory.dto.MedicalHistoryMapper
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/insurance/controller/InsuranceController.java:[14,19] cannot find symbol
+[ERROR]   symbol:   class InsuranceService
+[ERROR]   location: class com.example.health_platform.modules.insurance.controller.InsuranceController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/insurance/controller/InsuranceController.java:[16,32] cannot find symbol
+[ERROR]   symbol:   class InsuranceService
+[ERROR]   location: class com.example.health_platform.modules.insurance.controller.InsuranceController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/service/MedicalHistoryService.java:[3,64] cannot find symbol
+[ERROR]   symbol:   class medicalhistory
+[ERROR]   location: package com.example.health_platform.modules.medicalhistory.model
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/service/MedicalHistoryService.java:[20,32] cannot find symbol
+[ERROR]   symbol:   class MedicalHistory
+[ERROR]   location: class com.example.health_platform.modules.medicalhistory.service.MedicalHistoryService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/service/MedicalHistoryService.java:[20,12] cannot find symbol
+[ERROR]   symbol:   class MedicalHistory
+[ERROR]   location: class com.example.health_platform.modules.medicalhistory.service.MedicalHistoryService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/service/MedicalHistoryService.java:[24,17] cannot find symbol
+[ERROR]   symbol:   class MedicalHistory
+[ERROR]   location: class com.example.health_platform.modules.medicalhistory.service.MedicalHistoryService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/service/MedicalHistoryService.java:[28,21] cannot find symbol
+[ERROR]   symbol:   class MedicalHistory
+[ERROR]   location: class com.example.health_platform.modules.medicalhistory.service.MedicalHistoryService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/service/MedicalHistoryService.java:[36,17] cannot find symbol
+[ERROR]   symbol:   class MedicalHistory
+[ERROR]   location: class com.example.health_platform.modules.medicalhistory.service.MedicalHistoryService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/controller/MedicalHistoryController.java:[4,64] cannot find symbol
+[ERROR]   symbol:   class medicalhistory
+[ERROR]   location: package com.example.health_platform.modules.medicalhistory.model
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/controller/MedicalHistoryController.java:[23,70] cannot find symbol
+[ERROR]   symbol:   class MedicalHistory
+[ERROR]   location: class com.example.health_platform.modules.medicalhistory.controller.MedicalHistoryController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/controller/MedicalHistoryController.java:[23,27] cannot find symbol
+[ERROR]   symbol:   class MedicalHistory
+[ERROR]   location: class com.example.health_platform.modules.medicalhistory.controller.MedicalHistoryController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/controller/MedicalHistoryController.java:[28,32] cannot find symbol
+[ERROR]   symbol:   class MedicalHistory
+[ERROR]   location: class com.example.health_platform.modules.medicalhistory.controller.MedicalHistoryController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/controller/MedicalHistoryController.java:[33,27] cannot find symbol
+[ERROR]   symbol:   class MedicalHistory
+[ERROR]   location: class com.example.health_platform.modules.medicalhistory.controller.MedicalHistoryController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/controller/MedicalHistoryController.java:[46,32] cannot find symbol
+[ERROR]   symbol:   class MedicalHistory
+[ERROR]   location: class com.example.health_platform.modules.medicalhistory.controller.MedicalHistoryController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalhistory/dto/MedicalHistoryMapper.java:[9,8] No implementation was created for MedicalHistoryMapper due to having a problem in the erroneous element MedicalHistory. Hint: this often means that some other annotation processor was supposed to process the erroneous element. You can also enable MapStruct verbose mode by setting -Amapstruct.verbose=true as a compilation argument.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

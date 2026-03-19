@@ -1,6 +1,6 @@
-package com.example.health_platform.modules.Analytics.controller;
-import com.example.health_platform.modules.Analytics.service.AnalyticsService;
-import com.example.health_platform.modules.admin.DTO.AdminStatsDTO;
+package com.example.health_platform.modules.analytics.controller;
+import com.example.health_platform.modules.analytics.service.AnalyticsService;
+import com.example.health_platform.modules.admin.dto.AdminStatsDTO;
 
 import com.example.health_platform.modules.admin.service.AdminService;
 

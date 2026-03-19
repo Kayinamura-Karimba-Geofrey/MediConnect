@@ -1,6 +1,6 @@
-package com.example.health_platform.modules.Analytics.service;
+package com.example.health_platform.modules.analytics.service;
 
-import com.example.health_platform.modules.Analytics.DTO.PlatformStatsDTO;
+import com.example.health_platform.modules.analytics.dto.PlatformStatsDTO;
 
 import java.util.Map;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.health_platform.modules.file.DTO;
+package com.example.health_platform.modules.file.dto;
 
 import lombok.Data;
 

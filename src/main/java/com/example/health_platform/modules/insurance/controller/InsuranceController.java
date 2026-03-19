@@ -3,7 +3,9 @@ package com.example.health_platform.modules.insurance.controller;
 import com.example.health_platform.auth.model.User;
 import com.example.health_platform.modules.insurance.dto.CreateInsuranceDTO;
 import com.example.health_platform.modules.insurance.dto.InsuranceResponseDTO;
+import com.example.health_platform.modules.insurance.service.InsuranceService;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 

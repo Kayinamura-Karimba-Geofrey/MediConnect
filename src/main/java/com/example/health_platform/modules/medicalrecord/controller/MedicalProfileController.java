@@ -1,6 +1,6 @@
 package com.example.health_platform.modules.medicalrecord.controller;
-import com.example.health_platform.modules.medicalrecord.DTO.MedicalProfileRequest;
-import com.example.health_platform.modules.medicalrecord.DTO.MedicalProfileResponse;
+import com.example.health_platform.modules.medicalrecord.dto.MedicalProfileRequest;
+import com.example.health_platform.modules.medicalrecord.dto.MedicalProfileResponse;
 import com.example.health_platform.modules.medicalrecord.service.MedicalProfileService;
 import com.example.health_platform.auth.security.CurrentUser;
 import lombok.RequiredArgsConstructor;
