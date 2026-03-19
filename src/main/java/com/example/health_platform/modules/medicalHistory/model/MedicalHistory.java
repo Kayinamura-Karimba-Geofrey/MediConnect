@@ -1,4 +1,4 @@
-package com.example.health_platform.modules.medicalHistory.model;
+package com.example.health_platform.modules.medicalhistory.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

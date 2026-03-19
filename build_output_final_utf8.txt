@@ -1,0 +1,616 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< com.example:health_platform >---------------------
+[INFO] Building health_platform 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ health_platform ---
+[INFO] Deleting C:\Users\HP\Downloads\health_platform\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ health_platform ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ health_platform ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 149 source files with javac [debug release 21] to target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/analytics/controller/AnalyticsController.java:[3,53] cannot access com.example.health_platform.modules.admin.dto.AdminStatsDTO
+  bad source file: C:\Users\HP\Downloads\health_platform\src\main\java\com\example\health_platform\modules\admin\dto\AdminStatsDTO.java
+    file does not contain class com.example.health_platform.modules.admin.dto.AdminStatsDTO
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/analytics/service/AnalyticsService.java:[3,57] cannot access com.example.health_platform.modules.analytics.dto.PlatformStatsDTO
+  bad source file: C:\Users\HP\Downloads\health_platform\src\main\java\com\example\health_platform\modules\analytics\dto\PlatformStatsDTO.java
+    file does not contain class com.example.health_platform.modules.analytics.dto.PlatformStatsDTO
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalRecordService.java:[3,61] cannot access com.example.health_platform.modules.medicalrecord.dto.MedicalRecordRequest
+  bad source file: C:\Users\HP\Downloads\health_platform\src\main\java\com\example\health_platform\modules\medicalrecord\dto\MedicalRecordRequest.java
+    file does not contain class com.example.health_platform.modules.medicalrecord.dto.MedicalRecordRequest
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalRecordService.java:[4,61] cannot access com.example.health_platform.modules.medicalrecord.dto.MedicalRecordResponse
+  bad source file: C:\Users\HP\Downloads\health_platform\src\main\java\com\example\health_platform\modules\medicalrecord\dto\MedicalRecordResponse.java
+    file does not contain class com.example.health_platform.modules.medicalrecord.dto.MedicalRecordResponse
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionService.java:[4,60] cannot access com.example.health_platform.modules.prescription.dto.CreatePrescriptionDTO
+  bad source file: C:\Users\HP\Downloads\health_platform\src\main\java\com\example\health_platform\modules\prescription\dto\CreatePrescriptionDTO.java
+    file does not contain class com.example.health_platform.modules.prescription.dto.CreatePrescriptionDTO
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionService.java:[5,60] cannot access com.example.health_platform.modules.prescription.dto.PrescriptionResponseDTO
+  bad source file: C:\Users\HP\Downloads\health_platform\src\main\java\com\example\health_platform\modules\prescription\dto\PrescriptionResponseDTO.java
+    file does not contain class com.example.health_platform.modules.prescription.dto.PrescriptionResponseDTO
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/file/service/FileService.java:[4,52] cannot access com.example.health_platform.modules.file.dto.FileUploadResponseDTO
+  bad source file: C:\Users\HP\Downloads\health_platform\src\main\java\com\example\health_platform\modules\file\dto\FileUploadResponseDTO.java
+    file does not contain class com.example.health_platform.modules.file.dto.FileUploadResponseDTO
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/controller/MedicalProfileController.java:[2,61] cannot access com.example.health_platform.modules.medicalrecord.dto.MedicalProfileRequest
+  bad source file: C:\Users\HP\Downloads\health_platform\src\main\java\com\example\health_platform\modules\medicalrecord\dto\MedicalProfileRequest.java
+    file does not contain class com.example.health_platform.modules.medicalrecord.dto.MedicalProfileRequest
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/controller/MedicalProfileController.java:[3,61] cannot access com.example.health_platform.modules.medicalrecord.dto.MedicalProfileResponse
+  bad source file: C:\Users\HP\Downloads\health_platform\src\main\java\com\example\health_platform\modules\medicalrecord\dto\MedicalProfileResponse.java
+    file does not contain class com.example.health_platform.modules.medicalrecord.dto.MedicalProfileResponse
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/admin/dto/AdminStatsDTO.java:[6,8] duplicate class: com.example.health_platform.modules.admin.DTO.AdminStatsDTO
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/analytics/dto/PlatformStatsDTO.java:[7,8] duplicate class: com.example.health_platform.modules.analytics.DTO.PlatformStatsDTO
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/analytics/controller/AnalyticsController.java:[27,27] cannot find symbol
+  symbol:   class AdminStatsDTO
+  location: class com.example.health_platform.modules.analytics.controller.AnalyticsController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/admin/service/AdminService.java:[15,5] cannot find symbol
+  symbol:   class AdminStatsDTO
+  location: interface com.example.health_platform.modules.admin.service.AdminService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/analytics/service/AnalyticsService.java:[10,5] cannot find symbol
+  symbol:   class PlatformStatsDTO
+  location: interface com.example.health_platform.modules.analytics.service.AnalyticsService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/dto/MedicalRecordRequest.java:[7,8] duplicate class: com.example.health_platform.modules.medicalrecord.DTO.MedicalRecordRequest
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/dto/MedicalRecordResponse.java:[6,8] duplicate class: com.example.health_platform.modules.medicalrecord.DTO.MedicalRecordResponse
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalRecordService.java:[11,48] cannot find symbol
+  symbol:   class MedicalRecordRequest
+  location: interface com.example.health_platform.modules.medicalrecord.service.MedicalRecordService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalRecordService.java:[11,5] cannot find symbol
+  symbol:   class MedicalRecordResponse
+  location: interface com.example.health_platform.modules.medicalrecord.service.MedicalRecordService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalRecordService.java:[13,5] cannot find symbol
+  symbol:   class MedicalRecordResponse
+  location: interface com.example.health_platform.modules.medicalrecord.service.MedicalRecordService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalRecordService.java:[15,10] cannot find symbol
+  symbol:   class MedicalRecordResponse
+  location: interface com.example.health_platform.modules.medicalrecord.service.MedicalRecordService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/dto/CreatePrescriptionDTO.java:[8,8] duplicate class: com.example.health_platform.modules.prescription.DTO.CreatePrescriptionDTO
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/dto/PrescriptionResponseDTO.java:[7,8] duplicate class: com.example.health_platform.modules.prescription.DTO.PrescriptionResponseDTO
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionService.java:[11,61] cannot find symbol
+  symbol:   class CreatePrescriptionDTO
+  location: interface com.example.health_platform.modules.prescription.service.PrescriptionService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionService.java:[11,5] cannot find symbol
+  symbol:   class PrescriptionResponseDTO
+  location: interface com.example.health_platform.modules.prescription.service.PrescriptionService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionService.java:[13,5] cannot find symbol
+  symbol:   class PrescriptionResponseDTO
+  location: interface com.example.health_platform.modules.prescription.service.PrescriptionService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionService.java:[15,10] cannot find symbol
+  symbol:   class PrescriptionResponseDTO
+  location: interface com.example.health_platform.modules.prescription.service.PrescriptionService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionService.java:[17,5] cannot find symbol
+  symbol:   class PrescriptionResponseDTO
+  location: interface com.example.health_platform.modules.prescription.service.PrescriptionService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/file/dto/FileUploadResponseDTO.java:[6,8] duplicate class: com.example.health_platform.modules.file.DTO.FileUploadResponseDTO
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/file/service/FileService.java:[11,5] cannot find symbol
+  symbol:   class FileUploadResponseDTO
+  location: interface com.example.health_platform.modules.file.service.FileService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/file/service/FileService.java:[13,5] cannot find symbol
+  symbol:   class FileUploadResponseDTO
+  location: interface com.example.health_platform.modules.file.service.FileService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/file/service/FileService.java:[15,10] cannot find symbol
+  symbol:   class FileUploadResponseDTO
+  location: interface com.example.health_platform.modules.file.service.FileService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/controller/PrescriptionController.java:[25,26] cannot find symbol
+  symbol:   class CreatePrescriptionDTO
+  location: class com.example.health_platform.modules.prescription.controller.PrescriptionController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/controller/PrescriptionController.java:[23,12] cannot find symbol
+  symbol:   class PrescriptionResponseDTO
+  location: class com.example.health_platform.modules.prescription.controller.PrescriptionController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/controller/PrescriptionController.java:[31,12] cannot find symbol
+  symbol:   class PrescriptionResponseDTO
+  location: class com.example.health_platform.modules.prescription.controller.PrescriptionController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/controller/PrescriptionController.java:[36,17] cannot find symbol
+  symbol:   class PrescriptionResponseDTO
+  location: class com.example.health_platform.modules.prescription.controller.PrescriptionController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/controller/PrescriptionController.java:[41,12] cannot find symbol
+  symbol:   class PrescriptionResponseDTO
+  location: class com.example.health_platform.modules.prescription.controller.PrescriptionController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/admin/service/AdminServiceImpl.java:[38,12] cannot find symbol
+  symbol:   class AdminStatsDTO
+  location: class com.example.health_platform.modules.admin.service.AdminServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/insurance/controller/InsuranceController.java:[14,19] cannot find symbol
+  symbol:   class InsuranceService
+  location: class com.example.health_platform.modules.insurance.controller.InsuranceController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/insurance/controller/InsuranceController.java:[16,32] cannot find symbol
+  symbol:   class InsuranceService
+  location: class com.example.health_platform.modules.insurance.controller.InsuranceController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/dto/MedicalProfileRequest.java:[7,8] duplicate class: com.example.health_platform.modules.medicalrecord.DTO.MedicalProfileRequest
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/dto/MedicalProfileResponse.java:[11,8] duplicate class: com.example.health_platform.modules.medicalrecord.DTO.MedicalProfileResponse
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/controller/MedicalProfileController.java:[19,26] cannot find symbol
+  symbol:   class MedicalProfileRequest
+  location: class com.example.health_platform.modules.medicalrecord.controller.MedicalProfileController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/controller/MedicalProfileController.java:[17,12] cannot find symbol
+  symbol:   class MedicalProfileResponse
+  location: class com.example.health_platform.modules.medicalrecord.controller.MedicalProfileController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/controller/MedicalProfileController.java:[25,12] cannot find symbol
+  symbol:   class MedicalProfileResponse
+  location: class com.example.health_platform.modules.medicalrecord.controller.MedicalProfileController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalProfileService.java:[21,63] cannot find symbol
+  symbol:   class MedicalProfileRequest
+  location: class com.example.health_platform.modules.medicalrecord.service.MedicalProfileService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalProfileService.java:[21,12] cannot find symbol
+  symbol:   class MedicalProfileResponse
+  location: class com.example.health_platform.modules.medicalrecord.service.MedicalProfileService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalProfileService.java:[42,12] cannot find symbol
+  symbol:   class MedicalProfileResponse
+  location: class com.example.health_platform.modules.medicalrecord.service.MedicalProfileService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalProfileService.java:[51,13] cannot find symbol
+  symbol:   class MedicalProfileResponse
+  location: class com.example.health_platform.modules.medicalrecord.service.MedicalProfileService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionServiceImpl.java:[27,68] cannot find symbol
+  symbol:   class CreatePrescriptionDTO
+  location: class com.example.health_platform.modules.prescription.service.PrescriptionServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionServiceImpl.java:[27,12] cannot find symbol
+  symbol:   class PrescriptionResponseDTO
+  location: class com.example.health_platform.modules.prescription.service.PrescriptionServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionServiceImpl.java:[42,12] cannot find symbol
+  symbol:   class PrescriptionResponseDTO
+  location: class com.example.health_platform.modules.prescription.service.PrescriptionServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionServiceImpl.java:[49,17] cannot find symbol
+  symbol:   class PrescriptionResponseDTO
+  location: class com.example.health_platform.modules.prescription.service.PrescriptionServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionServiceImpl.java:[60,12] cannot find symbol
+  symbol:   class PrescriptionResponseDTO
+  location: class com.example.health_platform.modules.prescription.service.PrescriptionServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionServiceImpl.java:[70,13] cannot find symbol
+  symbol:   class PrescriptionResponseDTO
+  location: class com.example.health_platform.modules.prescription.service.PrescriptionServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/file/controller/FileController.java:[22,12] cannot find symbol
+  symbol:   class FileUploadResponseDTO
+  location: class com.example.health_platform.modules.file.controller.FileController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/file/controller/FileController.java:[28,12] cannot find symbol
+  symbol:   class FileUploadResponseDTO
+  location: class com.example.health_platform.modules.file.controller.FileController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/file/controller/FileController.java:[34,17] cannot find symbol
+  symbol:   class FileUploadResponseDTO
+  location: class com.example.health_platform.modules.file.controller.FileController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/controller/MedicalRecordController.java:[30,76] cannot find symbol
+  symbol:   class MedicalRecordRequest
+  location: class com.example.health_platform.modules.medicalrecord.controller.MedicalRecordController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/controller/MedicalRecordController.java:[30,27] cannot find symbol
+  symbol:   class MedicalRecordResponse
+  location: class com.example.health_platform.modules.medicalrecord.controller.MedicalRecordController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/controller/MedicalRecordController.java:[36,27] cannot find symbol
+  symbol:   class MedicalRecordResponse
+  location: class com.example.health_platform.modules.medicalrecord.controller.MedicalRecordController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/controller/MedicalRecordController.java:[47,32] cannot find symbol
+  symbol:   class MedicalRecordResponse
+  location: class com.example.health_platform.modules.medicalrecord.controller.MedicalRecordController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/file/service/FileServiceImpl.java:[24,12] cannot find symbol
+  symbol:   class FileUploadResponseDTO
+  location: class com.example.health_platform.modules.file.service.FileServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/file/service/FileServiceImpl.java:[29,12] cannot find symbol
+  symbol:   class FileUploadResponseDTO
+  location: class com.example.health_platform.modules.file.service.FileServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/file/service/FileServiceImpl.java:[33,13] cannot find symbol
+  symbol:   class FileUploadResponseDTO
+  location: class com.example.health_platform.modules.file.service.FileServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/file/service/FileServiceImpl.java:[59,17] cannot find symbol
+  symbol:   class FileUploadResponseDTO
+  location: class com.example.health_platform.modules.file.service.FileServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/analytics/service/AnalyticsServiceImpl.java:[37,12] cannot find symbol
+  symbol:   class PlatformStatsDTO
+  location: class com.example.health_platform.modules.analytics.service.AnalyticsServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalRecordServiceImpl.java:[26,55] cannot find symbol
+  symbol:   class MedicalRecordRequest
+  location: class com.example.health_platform.modules.medicalrecord.service.MedicalRecordServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalRecordServiceImpl.java:[26,12] cannot find symbol
+  symbol:   class MedicalRecordResponse
+  location: class com.example.health_platform.modules.medicalrecord.service.MedicalRecordServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalRecordServiceImpl.java:[50,12] cannot find symbol
+  symbol:   class MedicalRecordResponse
+  location: class com.example.health_platform.modules.medicalrecord.service.MedicalRecordServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalRecordServiceImpl.java:[66,17] cannot find symbol
+  symbol:   class MedicalRecordResponse
+  location: class com.example.health_platform.modules.medicalrecord.service.MedicalRecordServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/admin/controller/AdminController.java:[31,27] cannot find symbol
+  symbol:   class AdminStatsDTO
+  location: class com.example.health_platform.modules.admin.controller.AdminController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/auth/security/UserPrincipal.java:[19,20] cannot find symbol
+  symbol:   method getId()
+  location: variable user of type com.example.health_platform.auth.model.User
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/auth/security/UserPrincipal.java:[23,20] cannot find symbol
+  symbol:   method getRole()
+  location: variable user of type com.example.health_platform.auth.model.User
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/auth/security/UserPrincipal.java:[28,44] cannot find symbol
+  symbol:   method getRole()
+  location: variable user of type com.example.health_platform.auth.model.User
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/auth/security/UserPrincipal.java:[32,46] cannot find symbol
+  symbol:   method getPassword()
+  location: variable user of type com.example.health_platform.auth.model.User
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/auth/security/UserPrincipal.java:[35,46] cannot find symbol
+  symbol:   method getEmail()
+  location: variable user of type com.example.health_platform.auth.model.User
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[27,47] cannot find symbol
+  symbol:   method builder()
+  location: class com.example.health_platform.modules.notification.dto.NotificationResponse
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[28,30] cannot find symbol
+  symbol:   method getId()
+  location: variable n of type com.example.health_platform.modules.notification.model.Notification
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[29,35] cannot find symbol
+  symbol:   method getMessage()
+  location: variable n of type com.example.health_platform.modules.notification.model.Notification
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[30,34] cannot find symbol
+  symbol:   method isRead()
+  location: variable n of type com.example.health_platform.modules.notification.model.Notification
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[31,37] cannot find symbol
+  symbol:   method getTimeStamp()
+  location: variable n of type com.example.health_platform.modules.notification.model.Notification
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[33,24] incompatible types: java.util.List<java.lang.Object> cannot be converted to java.util.List<com.example.health_platform.modules.notification.dto.NotificationResponse>
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[39,10] cannot find symbol
+  symbol:   method setRead(boolean)
+  location: variable n of type com.example.health_platform.modules.notification.model.Notification
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[42,36] cannot find symbol
+  symbol:   method builder()
+  location: class com.example.health_platform.modules.notification.dto.NotificationResponse
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[43,22] cannot find symbol
+  symbol:   method getId()
+  location: variable n of type com.example.health_platform.modules.notification.model.Notification
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[44,27] cannot find symbol
+  symbol:   method getMessage()
+  location: variable n of type com.example.health_platform.modules.notification.model.Notification
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[45,26] cannot find symbol
+  symbol:   method isRead()
+  location: variable n of type com.example.health_platform.modules.notification.model.Notification
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[46,29] cannot find symbol
+  symbol:   method getTimeStamp()
+  location: variable n of type com.example.health_platform.modules.notification.model.Notification
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[54,38] cannot find symbol
+  symbol:   method builder()
+  location: class com.example.health_platform.modules.notification.model.Notification
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/auth/security/JwtAuthenticationFilter.java:[56,92] cannot find symbol
+  symbol:   method getRole()
+  location: variable user of type com.example.health_platform.auth.model.User
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/billing/service/BillingServiceImpl.java:[25,13] cannot find symbol
+  symbol:   method setPatient(com.example.health_platform.auth.model.User)
+  location: variable bill of type com.example.health_platform.modules.billing.model.Bill
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/billing/service/BillingServiceImpl.java:[26,13] cannot find symbol
+  symbol:   method setAmount(java.lang.Double)
+  location: variable bill of type com.example.health_platform.modules.billing.model.Bill
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/billing/service/BillingServiceImpl.java:[27,13] cannot find symbol
+  symbol:   method setDescription(java.lang.String)
+  location: variable bill of type com.example.health_platform.modules.billing.model.Bill
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/billing/service/BillingServiceImpl.java:[53,13] cannot find symbol
+  symbol:   method setStatus(com.example.health_platform.modules.billing.model.BillStatus)
+  location: variable bill of type com.example.health_platform.modules.billing.model.Bill
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/billing/service/BillingServiceImpl.java:[60,23] cannot find symbol
+  symbol:   method getId()
+  location: variable bill of type com.example.health_platform.modules.billing.model.Bill
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/billing/service/BillingServiceImpl.java:[61,30] cannot find symbol
+  symbol:   method getPatient()
+  location: variable bill of type com.example.health_platform.modules.billing.model.Bill
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/billing/service/BillingServiceImpl.java:[62,27] cannot find symbol
+  symbol:   method getAmount()
+  location: variable bill of type com.example.health_platform.modules.billing.model.Bill
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/billing/service/BillingServiceImpl.java:[63,32] cannot find symbol
+  symbol:   method getDescription()
+  location: variable bill of type com.example.health_platform.modules.billing.model.Bill
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/billing/service/BillingServiceImpl.java:[64,27] cannot find symbol
+  symbol:   method getStatus()
+  location: variable bill of type com.example.health_platform.modules.billing.model.Bill
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/auth/controller/AuthController.java:[40,34] constructor JwtResponse in class com.example.health_platform.auth.dto.JwtResponse cannot be applied to given types;
+  required: no arguments
+  found:    java.lang.String
+  reason: actual and formal argument lists differ in length
+[INFO] 100 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.572 s
+[INFO] Finished at: 2026-03-19T22:27:06+02:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project health_platform: Compilation failure: Compilation failure: 
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/analytics/controller/AnalyticsController.java:[3,53] cannot access com.example.health_platform.modules.admin.dto.AdminStatsDTO
+[ERROR]   bad source file: C:\Users\HP\Downloads\health_platform\src\main\java\com\example\health_platform\modules\admin\dto\AdminStatsDTO.java
+[ERROR]     file does not contain class com.example.health_platform.modules.admin.dto.AdminStatsDTO
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/analytics/service/AnalyticsService.java:[3,57] cannot access com.example.health_platform.modules.analytics.dto.PlatformStatsDTO
+[ERROR]   bad source file: C:\Users\HP\Downloads\health_platform\src\main\java\com\example\health_platform\modules\analytics\dto\PlatformStatsDTO.java
+[ERROR]     file does not contain class com.example.health_platform.modules.analytics.dto.PlatformStatsDTO
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalRecordService.java:[3,61] cannot access com.example.health_platform.modules.medicalrecord.dto.MedicalRecordRequest
+[ERROR]   bad source file: C:\Users\HP\Downloads\health_platform\src\main\java\com\example\health_platform\modules\medicalrecord\dto\MedicalRecordRequest.java
+[ERROR]     file does not contain class com.example.health_platform.modules.medicalrecord.dto.MedicalRecordRequest
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalRecordService.java:[4,61] cannot access com.example.health_platform.modules.medicalrecord.dto.MedicalRecordResponse
+[ERROR]   bad source file: C:\Users\HP\Downloads\health_platform\src\main\java\com\example\health_platform\modules\medicalrecord\dto\MedicalRecordResponse.java
+[ERROR]     file does not contain class com.example.health_platform.modules.medicalrecord.dto.MedicalRecordResponse
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionService.java:[4,60] cannot access com.example.health_platform.modules.prescription.dto.CreatePrescriptionDTO
+[ERROR]   bad source file: C:\Users\HP\Downloads\health_platform\src\main\java\com\example\health_platform\modules\prescription\dto\CreatePrescriptionDTO.java
+[ERROR]     file does not contain class com.example.health_platform.modules.prescription.dto.CreatePrescriptionDTO
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionService.java:[5,60] cannot access com.example.health_platform.modules.prescription.dto.PrescriptionResponseDTO
+[ERROR]   bad source file: C:\Users\HP\Downloads\health_platform\src\main\java\com\example\health_platform\modules\prescription\dto\PrescriptionResponseDTO.java
+[ERROR]     file does not contain class com.example.health_platform.modules.prescription.dto.PrescriptionResponseDTO
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/file/service/FileService.java:[4,52] cannot access com.example.health_platform.modules.file.dto.FileUploadResponseDTO
+[ERROR]   bad source file: C:\Users\HP\Downloads\health_platform\src\main\java\com\example\health_platform\modules\file\dto\FileUploadResponseDTO.java
+[ERROR]     file does not contain class com.example.health_platform.modules.file.dto.FileUploadResponseDTO
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/controller/MedicalProfileController.java:[2,61] cannot access com.example.health_platform.modules.medicalrecord.dto.MedicalProfileRequest
+[ERROR]   bad source file: C:\Users\HP\Downloads\health_platform\src\main\java\com\example\health_platform\modules\medicalrecord\dto\MedicalProfileRequest.java
+[ERROR]     file does not contain class com.example.health_platform.modules.medicalrecord.dto.MedicalProfileRequest
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/controller/MedicalProfileController.java:[3,61] cannot access com.example.health_platform.modules.medicalrecord.dto.MedicalProfileResponse
+[ERROR]   bad source file: C:\Users\HP\Downloads\health_platform\src\main\java\com\example\health_platform\modules\medicalrecord\dto\MedicalProfileResponse.java
+[ERROR]     file does not contain class com.example.health_platform.modules.medicalrecord.dto.MedicalProfileResponse
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/admin/dto/AdminStatsDTO.java:[6,8] duplicate class: com.example.health_platform.modules.admin.DTO.AdminStatsDTO
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/analytics/dto/PlatformStatsDTO.java:[7,8] duplicate class: com.example.health_platform.modules.analytics.DTO.PlatformStatsDTO
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/analytics/controller/AnalyticsController.java:[27,27] cannot find symbol
+[ERROR]   symbol:   class AdminStatsDTO
+[ERROR]   location: class com.example.health_platform.modules.analytics.controller.AnalyticsController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/admin/service/AdminService.java:[15,5] cannot find symbol
+[ERROR]   symbol:   class AdminStatsDTO
+[ERROR]   location: interface com.example.health_platform.modules.admin.service.AdminService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/analytics/service/AnalyticsService.java:[10,5] cannot find symbol
+[ERROR]   symbol:   class PlatformStatsDTO
+[ERROR]   location: interface com.example.health_platform.modules.analytics.service.AnalyticsService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/dto/MedicalRecordRequest.java:[7,8] duplicate class: com.example.health_platform.modules.medicalrecord.DTO.MedicalRecordRequest
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/dto/MedicalRecordResponse.java:[6,8] duplicate class: com.example.health_platform.modules.medicalrecord.DTO.MedicalRecordResponse
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalRecordService.java:[11,48] cannot find symbol
+[ERROR]   symbol:   class MedicalRecordRequest
+[ERROR]   location: interface com.example.health_platform.modules.medicalrecord.service.MedicalRecordService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalRecordService.java:[11,5] cannot find symbol
+[ERROR]   symbol:   class MedicalRecordResponse
+[ERROR]   location: interface com.example.health_platform.modules.medicalrecord.service.MedicalRecordService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalRecordService.java:[13,5] cannot find symbol
+[ERROR]   symbol:   class MedicalRecordResponse
+[ERROR]   location: interface com.example.health_platform.modules.medicalrecord.service.MedicalRecordService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalRecordService.java:[15,10] cannot find symbol
+[ERROR]   symbol:   class MedicalRecordResponse
+[ERROR]   location: interface com.example.health_platform.modules.medicalrecord.service.MedicalRecordService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/dto/CreatePrescriptionDTO.java:[8,8] duplicate class: com.example.health_platform.modules.prescription.DTO.CreatePrescriptionDTO
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/dto/PrescriptionResponseDTO.java:[7,8] duplicate class: com.example.health_platform.modules.prescription.DTO.PrescriptionResponseDTO
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionService.java:[11,61] cannot find symbol
+[ERROR]   symbol:   class CreatePrescriptionDTO
+[ERROR]   location: interface com.example.health_platform.modules.prescription.service.PrescriptionService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionService.java:[11,5] cannot find symbol
+[ERROR]   symbol:   class PrescriptionResponseDTO
+[ERROR]   location: interface com.example.health_platform.modules.prescription.service.PrescriptionService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionService.java:[13,5] cannot find symbol
+[ERROR]   symbol:   class PrescriptionResponseDTO
+[ERROR]   location: interface com.example.health_platform.modules.prescription.service.PrescriptionService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionService.java:[15,10] cannot find symbol
+[ERROR]   symbol:   class PrescriptionResponseDTO
+[ERROR]   location: interface com.example.health_platform.modules.prescription.service.PrescriptionService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionService.java:[17,5] cannot find symbol
+[ERROR]   symbol:   class PrescriptionResponseDTO
+[ERROR]   location: interface com.example.health_platform.modules.prescription.service.PrescriptionService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/file/dto/FileUploadResponseDTO.java:[6,8] duplicate class: com.example.health_platform.modules.file.DTO.FileUploadResponseDTO
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/file/service/FileService.java:[11,5] cannot find symbol
+[ERROR]   symbol:   class FileUploadResponseDTO
+[ERROR]   location: interface com.example.health_platform.modules.file.service.FileService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/file/service/FileService.java:[13,5] cannot find symbol
+[ERROR]   symbol:   class FileUploadResponseDTO
+[ERROR]   location: interface com.example.health_platform.modules.file.service.FileService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/file/service/FileService.java:[15,10] cannot find symbol
+[ERROR]   symbol:   class FileUploadResponseDTO
+[ERROR]   location: interface com.example.health_platform.modules.file.service.FileService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/controller/PrescriptionController.java:[25,26] cannot find symbol
+[ERROR]   symbol:   class CreatePrescriptionDTO
+[ERROR]   location: class com.example.health_platform.modules.prescription.controller.PrescriptionController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/controller/PrescriptionController.java:[23,12] cannot find symbol
+[ERROR]   symbol:   class PrescriptionResponseDTO
+[ERROR]   location: class com.example.health_platform.modules.prescription.controller.PrescriptionController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/controller/PrescriptionController.java:[31,12] cannot find symbol
+[ERROR]   symbol:   class PrescriptionResponseDTO
+[ERROR]   location: class com.example.health_platform.modules.prescription.controller.PrescriptionController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/controller/PrescriptionController.java:[36,17] cannot find symbol
+[ERROR]   symbol:   class PrescriptionResponseDTO
+[ERROR]   location: class com.example.health_platform.modules.prescription.controller.PrescriptionController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/controller/PrescriptionController.java:[41,12] cannot find symbol
+[ERROR]   symbol:   class PrescriptionResponseDTO
+[ERROR]   location: class com.example.health_platform.modules.prescription.controller.PrescriptionController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/admin/service/AdminServiceImpl.java:[38,12] cannot find symbol
+[ERROR]   symbol:   class AdminStatsDTO
+[ERROR]   location: class com.example.health_platform.modules.admin.service.AdminServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/insurance/controller/InsuranceController.java:[14,19] cannot find symbol
+[ERROR]   symbol:   class InsuranceService
+[ERROR]   location: class com.example.health_platform.modules.insurance.controller.InsuranceController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/insurance/controller/InsuranceController.java:[16,32] cannot find symbol
+[ERROR]   symbol:   class InsuranceService
+[ERROR]   location: class com.example.health_platform.modules.insurance.controller.InsuranceController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/dto/MedicalProfileRequest.java:[7,8] duplicate class: com.example.health_platform.modules.medicalrecord.DTO.MedicalProfileRequest
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/dto/MedicalProfileResponse.java:[11,8] duplicate class: com.example.health_platform.modules.medicalrecord.DTO.MedicalProfileResponse
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/controller/MedicalProfileController.java:[19,26] cannot find symbol
+[ERROR]   symbol:   class MedicalProfileRequest
+[ERROR]   location: class com.example.health_platform.modules.medicalrecord.controller.MedicalProfileController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/controller/MedicalProfileController.java:[17,12] cannot find symbol
+[ERROR]   symbol:   class MedicalProfileResponse
+[ERROR]   location: class com.example.health_platform.modules.medicalrecord.controller.MedicalProfileController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/controller/MedicalProfileController.java:[25,12] cannot find symbol
+[ERROR]   symbol:   class MedicalProfileResponse
+[ERROR]   location: class com.example.health_platform.modules.medicalrecord.controller.MedicalProfileController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalProfileService.java:[21,63] cannot find symbol
+[ERROR]   symbol:   class MedicalProfileRequest
+[ERROR]   location: class com.example.health_platform.modules.medicalrecord.service.MedicalProfileService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalProfileService.java:[21,12] cannot find symbol
+[ERROR]   symbol:   class MedicalProfileResponse
+[ERROR]   location: class com.example.health_platform.modules.medicalrecord.service.MedicalProfileService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalProfileService.java:[42,12] cannot find symbol
+[ERROR]   symbol:   class MedicalProfileResponse
+[ERROR]   location: class com.example.health_platform.modules.medicalrecord.service.MedicalProfileService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalProfileService.java:[51,13] cannot find symbol
+[ERROR]   symbol:   class MedicalProfileResponse
+[ERROR]   location: class com.example.health_platform.modules.medicalrecord.service.MedicalProfileService
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionServiceImpl.java:[27,68] cannot find symbol
+[ERROR]   symbol:   class CreatePrescriptionDTO
+[ERROR]   location: class com.example.health_platform.modules.prescription.service.PrescriptionServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionServiceImpl.java:[27,12] cannot find symbol
+[ERROR]   symbol:   class PrescriptionResponseDTO
+[ERROR]   location: class com.example.health_platform.modules.prescription.service.PrescriptionServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionServiceImpl.java:[42,12] cannot find symbol
+[ERROR]   symbol:   class PrescriptionResponseDTO
+[ERROR]   location: class com.example.health_platform.modules.prescription.service.PrescriptionServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionServiceImpl.java:[49,17] cannot find symbol
+[ERROR]   symbol:   class PrescriptionResponseDTO
+[ERROR]   location: class com.example.health_platform.modules.prescription.service.PrescriptionServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionServiceImpl.java:[60,12] cannot find symbol
+[ERROR]   symbol:   class PrescriptionResponseDTO
+[ERROR]   location: class com.example.health_platform.modules.prescription.service.PrescriptionServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/prescription/service/PrescriptionServiceImpl.java:[70,13] cannot find symbol
+[ERROR]   symbol:   class PrescriptionResponseDTO
+[ERROR]   location: class com.example.health_platform.modules.prescription.service.PrescriptionServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/file/controller/FileController.java:[22,12] cannot find symbol
+[ERROR]   symbol:   class FileUploadResponseDTO
+[ERROR]   location: class com.example.health_platform.modules.file.controller.FileController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/file/controller/FileController.java:[28,12] cannot find symbol
+[ERROR]   symbol:   class FileUploadResponseDTO
+[ERROR]   location: class com.example.health_platform.modules.file.controller.FileController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/file/controller/FileController.java:[34,17] cannot find symbol
+[ERROR]   symbol:   class FileUploadResponseDTO
+[ERROR]   location: class com.example.health_platform.modules.file.controller.FileController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/controller/MedicalRecordController.java:[30,76] cannot find symbol
+[ERROR]   symbol:   class MedicalRecordRequest
+[ERROR]   location: class com.example.health_platform.modules.medicalrecord.controller.MedicalRecordController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/controller/MedicalRecordController.java:[30,27] cannot find symbol
+[ERROR]   symbol:   class MedicalRecordResponse
+[ERROR]   location: class com.example.health_platform.modules.medicalrecord.controller.MedicalRecordController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/controller/MedicalRecordController.java:[36,27] cannot find symbol
+[ERROR]   symbol:   class MedicalRecordResponse
+[ERROR]   location: class com.example.health_platform.modules.medicalrecord.controller.MedicalRecordController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/controller/MedicalRecordController.java:[47,32] cannot find symbol
+[ERROR]   symbol:   class MedicalRecordResponse
+[ERROR]   location: class com.example.health_platform.modules.medicalrecord.controller.MedicalRecordController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/file/service/FileServiceImpl.java:[24,12] cannot find symbol
+[ERROR]   symbol:   class FileUploadResponseDTO
+[ERROR]   location: class com.example.health_platform.modules.file.service.FileServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/file/service/FileServiceImpl.java:[29,12] cannot find symbol
+[ERROR]   symbol:   class FileUploadResponseDTO
+[ERROR]   location: class com.example.health_platform.modules.file.service.FileServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/file/service/FileServiceImpl.java:[33,13] cannot find symbol
+[ERROR]   symbol:   class FileUploadResponseDTO
+[ERROR]   location: class com.example.health_platform.modules.file.service.FileServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/file/service/FileServiceImpl.java:[59,17] cannot find symbol
+[ERROR]   symbol:   class FileUploadResponseDTO
+[ERROR]   location: class com.example.health_platform.modules.file.service.FileServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/analytics/service/AnalyticsServiceImpl.java:[37,12] cannot find symbol
+[ERROR]   symbol:   class PlatformStatsDTO
+[ERROR]   location: class com.example.health_platform.modules.analytics.service.AnalyticsServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalRecordServiceImpl.java:[26,55] cannot find symbol
+[ERROR]   symbol:   class MedicalRecordRequest
+[ERROR]   location: class com.example.health_platform.modules.medicalrecord.service.MedicalRecordServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalRecordServiceImpl.java:[26,12] cannot find symbol
+[ERROR]   symbol:   class MedicalRecordResponse
+[ERROR]   location: class com.example.health_platform.modules.medicalrecord.service.MedicalRecordServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalRecordServiceImpl.java:[50,12] cannot find symbol
+[ERROR]   symbol:   class MedicalRecordResponse
+[ERROR]   location: class com.example.health_platform.modules.medicalrecord.service.MedicalRecordServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/medicalrecord/service/MedicalRecordServiceImpl.java:[66,17] cannot find symbol
+[ERROR]   symbol:   class MedicalRecordResponse
+[ERROR]   location: class com.example.health_platform.modules.medicalrecord.service.MedicalRecordServiceImpl
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/admin/controller/AdminController.java:[31,27] cannot find symbol
+[ERROR]   symbol:   class AdminStatsDTO
+[ERROR]   location: class com.example.health_platform.modules.admin.controller.AdminController
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/auth/security/UserPrincipal.java:[19,20] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable user of type com.example.health_platform.auth.model.User
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/auth/security/UserPrincipal.java:[23,20] cannot find symbol
+[ERROR]   symbol:   method getRole()
+[ERROR]   location: variable user of type com.example.health_platform.auth.model.User
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/auth/security/UserPrincipal.java:[28,44] cannot find symbol
+[ERROR]   symbol:   method getRole()
+[ERROR]   location: variable user of type com.example.health_platform.auth.model.User
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/auth/security/UserPrincipal.java:[32,46] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable user of type com.example.health_platform.auth.model.User
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/auth/security/UserPrincipal.java:[35,46] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable user of type com.example.health_platform.auth.model.User
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[27,47] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.example.health_platform.modules.notification.dto.NotificationResponse
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[28,30] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable n of type com.example.health_platform.modules.notification.model.Notification
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[29,35] cannot find symbol
+[ERROR]   symbol:   method getMessage()
+[ERROR]   location: variable n of type com.example.health_platform.modules.notification.model.Notification
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[30,34] cannot find symbol
+[ERROR]   symbol:   method isRead()
+[ERROR]   location: variable n of type com.example.health_platform.modules.notification.model.Notification
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[31,37] cannot find symbol
+[ERROR]   symbol:   method getTimeStamp()
+[ERROR]   location: variable n of type com.example.health_platform.modules.notification.model.Notification
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[33,24] incompatible types: java.util.List<java.lang.Object> cannot be converted to java.util.List<com.example.health_platform.modules.notification.dto.NotificationResponse>
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[39,10] cannot find symbol
+[ERROR]   symbol:   method setRead(boolean)
+[ERROR]   location: variable n of type com.example.health_platform.modules.notification.model.Notification
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[42,36] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.example.health_platform.modules.notification.dto.NotificationResponse
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[43,22] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable n of type com.example.health_platform.modules.notification.model.Notification
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[44,27] cannot find symbol
+[ERROR]   symbol:   method getMessage()
+[ERROR]   location: variable n of type com.example.health_platform.modules.notification.model.Notification
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[45,26] cannot find symbol
+[ERROR]   symbol:   method isRead()
+[ERROR]   location: variable n of type com.example.health_platform.modules.notification.model.Notification
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[46,29] cannot find symbol
+[ERROR]   symbol:   method getTimeStamp()
+[ERROR]   location: variable n of type com.example.health_platform.modules.notification.model.Notification
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/notification/service/NotificationService.java:[54,38] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.example.health_platform.modules.notification.model.Notification
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/auth/security/JwtAuthenticationFilter.java:[56,92] cannot find symbol
+[ERROR]   symbol:   method getRole()
+[ERROR]   location: variable user of type com.example.health_platform.auth.model.User
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/billing/service/BillingServiceImpl.java:[25,13] cannot find symbol
+[ERROR]   symbol:   method setPatient(com.example.health_platform.auth.model.User)
+[ERROR]   location: variable bill of type com.example.health_platform.modules.billing.model.Bill
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/billing/service/BillingServiceImpl.java:[26,13] cannot find symbol
+[ERROR]   symbol:   method setAmount(java.lang.Double)
+[ERROR]   location: variable bill of type com.example.health_platform.modules.billing.model.Bill
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/billing/service/BillingServiceImpl.java:[27,13] cannot find symbol
+[ERROR]   symbol:   method setDescription(java.lang.String)
+[ERROR]   location: variable bill of type com.example.health_platform.modules.billing.model.Bill
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/billing/service/BillingServiceImpl.java:[53,13] cannot find symbol
+[ERROR]   symbol:   method setStatus(com.example.health_platform.modules.billing.model.BillStatus)
+[ERROR]   location: variable bill of type com.example.health_platform.modules.billing.model.Bill
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/billing/service/BillingServiceImpl.java:[60,23] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable bill of type com.example.health_platform.modules.billing.model.Bill
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/billing/service/BillingServiceImpl.java:[61,30] cannot find symbol
+[ERROR]   symbol:   method getPatient()
+[ERROR]   location: variable bill of type com.example.health_platform.modules.billing.model.Bill
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/billing/service/BillingServiceImpl.java:[62,27] cannot find symbol
+[ERROR]   symbol:   method getAmount()
+[ERROR]   location: variable bill of type com.example.health_platform.modules.billing.model.Bill
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/billing/service/BillingServiceImpl.java:[63,32] cannot find symbol
+[ERROR]   symbol:   method getDescription()
+[ERROR]   location: variable bill of type com.example.health_platform.modules.billing.model.Bill
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/modules/billing/service/BillingServiceImpl.java:[64,27] cannot find symbol
+[ERROR]   symbol:   method getStatus()
+[ERROR]   location: variable bill of type com.example.health_platform.modules.billing.model.Bill
+[ERROR] /C:/Users/HP/Downloads/health_platform/src/main/java/com/example/health_platform/auth/controller/AuthController.java:[40,34] constructor JwtResponse in class com.example.health_platform.auth.dto.JwtResponse cannot be applied to given types;
+[ERROR]   required: no arguments
+[ERROR]   found:    java.lang.String
+[ERROR]   reason: actual and formal argument lists differ in length
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

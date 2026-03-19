@@ -1,8 +1,8 @@
 
 package com.example.health_platform.modules.medicalrecord.controller;
 
-import com.example.health_platform.modules.medicalrecord.DTO.MedicalRecordRequest;
-import com.example.health_platform.modules.medicalrecord.DTO.MedicalRecordResponse;
+import com.example.health_platform.modules.medicalrecord.dto.MedicalRecordRequest;
+import com.example.health_platform.modules.medicalrecord.dto.MedicalRecordResponse;
 import com.example.health_platform.modules.medicalrecord.model.MedicalRecord;
 import com.example.health_platform.modules.medicalrecord.service.MedicalRecordService;
 import lombok.RequiredArgsConstructor;

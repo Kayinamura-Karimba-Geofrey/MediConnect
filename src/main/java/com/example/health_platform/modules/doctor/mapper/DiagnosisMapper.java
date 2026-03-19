@@ -1,5 +1,5 @@
 package com.example.health_platform.modules.doctor.mapper;
-import com.example.health_platform.modules.doctor.DTO.DiagnosisRequestDTO;
+import com.example.health_platform.modules.doctor.dto.DiagnosisRequestDTO;
 
 
 import com.example.health_platform.modules.doctor.model.Diagnosis;

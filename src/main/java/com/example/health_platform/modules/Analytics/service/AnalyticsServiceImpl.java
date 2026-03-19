@@ -1,13 +1,13 @@
-package com.example.health_platform.modules.Analytics.service;
+package com.example.health_platform.modules.analytics.service;
 
 import com.example.health_platform.auth.model.Role;
 import com.example.health_platform.auth.repository.UserRepository;
-import com.example.health_platform.modules.Analytics.DTO.PlatformStatsDTO;
+import com.example.health_platform.modules.analytics.dto.PlatformStatsDTO;
 import com.example.health_platform.modules.billing.model.BillStatus;
 import com.example.health_platform.modules.billing.repository.BillRepository;
 import com.example.health_platform.modules.appointment.repository.AppointmentRepository;
 import com.example.health_platform.modules.visit.repository.VisitRepository;
-//import com.example.health_platform.modules.Analytics.service.AnalyticsService;
+//import com.example.health_platform.modules.analytics.service.AnalyticsService;
 //import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.example.health_platform.modules.medicalHistory.DTO;
+package com.example.health_platform.modules.medicalhistory.dto;
 
 
 import java.time.LocalDate;

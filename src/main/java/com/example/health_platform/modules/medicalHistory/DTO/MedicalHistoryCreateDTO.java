@@ -1,4 +1,4 @@
-package com.example.health_platform.modules.medicalHistory.DTO ;
+package com.example.health_platform.modules.medicalhistory.dto ;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;

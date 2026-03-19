@@ -1,7 +1,7 @@
 package com.example.health_platform.modules.file.controller;
 
 import com.example.health_platform.auth.model.User;
-import com.example.health_platform.modules.file.DTO.FileUploadResponseDTO;
+import com.example.health_platform.modules.file.dto.FileUploadResponseDTO;
 import com.example.health_platform.modules.file.service.FileService;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;

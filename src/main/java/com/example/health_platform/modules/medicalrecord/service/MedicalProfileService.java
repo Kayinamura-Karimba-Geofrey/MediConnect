@@ -1,8 +1,8 @@
 package com.example.health_platform.modules.medicalrecord.service;
 import com.example.health_platform.auth.model.User;
 import com.example.health_platform.auth.repository.UserRepository;
-import com.example.health_platform.modules.medicalrecord.DTO.MedicalProfileRequest;
-import com.example.health_platform.modules.medicalrecord.DTO.MedicalProfileResponse;
+import com.example.health_platform.modules.medicalrecord.dto.MedicalProfileRequest;
+import com.example.health_platform.modules.medicalrecord.dto.MedicalProfileResponse;
 import com.example.health_platform.modules.medicalrecord.exception.MedicalProfileNotFoundException;
 import com.example.health_platform.modules.medicalrecord.model.MedicalProfile;
 

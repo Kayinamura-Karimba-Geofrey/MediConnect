@@ -1,7 +1,7 @@
-package com.example.health_platform.modules.medicalHistory.service;
+package com.example.health_platform.modules.medicalhistory.service;
 
-import com.example.health_platform.modules.medicalHistory.model.MedicalHistory;
-import com.example.health_platform.modules.medicalHistory.repository.MedicalHistoryRepository;
+import com.example.health_platform.modules.medicalhistory.model.MedicalHistory;
+import com.example.health_platform.modules.medicalhistory.repository.MedicalHistoryRepository;
 import org.springframework.stereotype.Service;
 
 

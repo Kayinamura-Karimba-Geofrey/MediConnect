@@ -1,4 +1,4 @@
-package com.example.health_platform.modules.prescription.DTO;
+package com.example.health_platform.modules.prescription.dto;
 
 import java.util.List;
 import jakarta.validation.constraints.NotEmpty;
